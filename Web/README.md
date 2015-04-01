@@ -12,3 +12,6 @@
 - [RESTClient]
 - [Hackbar]
 - [Tamper Data]
+
+### Learning Metasploitable2
+- [中文笔记](Metasploitable2/zh/index.md)
