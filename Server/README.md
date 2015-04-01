@@ -15,4 +15,4 @@
 - [Vim]
 
 ### WarGame
-- [SmashTheStack](http://www.smashthestack.org)
+- [SmashTheStack](http://www.smashthestack.org) - [IO](WarGame)
