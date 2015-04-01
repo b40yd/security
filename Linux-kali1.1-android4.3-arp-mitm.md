@@ -4,8 +4,9 @@
 - 操作系统kali1.1
 - ettercap
 - driftnet
+
 1、利用ettercap进行arp欺骗：
-打开ettercap：ettercap -C （curses UI）             ettercap -G （GTK+ GUI）
+打开ettercap：`ettercap -C` （curses UI） or  `ettercap -G` （GTK+ GUI）
 
 2、打开ettercap之后，选择Sniff--Unified-sniffing，然后选择网卡(eth0)
 然后Hosts--Scan for hosts--Hosts list，此时可以看到目标主机ip(192,168.199.106,我的安卓手机)
