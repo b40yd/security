@@ -3,3 +3,14 @@
 ### Windows Tools
 - [IDA PRO]
 - [OllyDbg](http://www.ollydbg.de/)
+- [Cygwin]
+
+### Linux Tools
+- [Objdump]
+- [GCC]
+- [GDB]
+
+### Editor
+- [Emacs]
+- [Vim]
+
