@@ -1,7 +1,7 @@
 ## Security In Web
 Mainly records the use of web security and related tools of learning environment
 
-### Web target drone environment set up
+### Web target drone environment
 - [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project)-[Download VM](http://sourceforge.net/projects/owaspbwa/)
 - [Metasploitable Linux-*](http://sourceforge.net/projects/metasploitable/files/Metasploitable2/)
 
