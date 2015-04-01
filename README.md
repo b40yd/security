@@ -1,6 +1,7 @@
 ## Security In *nix or Windows
+
     Main research penetration, offensive and defensive, direction of network security audit etc
-    Code files or POC named after platform - (released) - software(version) - exploit(name)
+    Code files or POC named after `platform-(released)-software(version)-exploit(name)`
     - platform: linux and unix or windows
         - version: 
                 `*(All version general)`
