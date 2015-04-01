@@ -8,6 +8,7 @@ Mainly records the use of web security and related tools of learning environment
 ### Tools
 - [Wireshark]
 - [Metasploit](http://www.metasploit.com/) Using Linux [Kali](https://www.kali.org/),it have metasploit tools
+- [nmap](Linux-nmap.md)
 
 ### Browser Tools
 - [RESTClient]

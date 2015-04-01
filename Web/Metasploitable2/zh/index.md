@@ -14,3 +14,5 @@ Metasploitable2靶机是Web安全从业人员的练习环境
 - [Samba](Linux-Ubuntu8.04-Samba.md)-利用samba服务漏洞入侵linux主机
 - [Distcc](Linux-Ubuntu8.04-Distcc.md)-Distcc服务漏洞
 - [RMIregistry](Linux-Ubuntu8.04-rmiregistry.md)-rmiregistry服务漏洞
+- [Druby](Linux-Ubuntu8.04-druby.md)-利用druby渗透  
+- [Telnet](Linux-Ubuntu8.04-telnet.md)-Telnet后门
