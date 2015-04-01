@@ -14,3 +14,5 @@
 - [Emacs]
 - [Vim]
 
+### WarGame
+- [SmashTheStack](http://www.smashthestack.org)
