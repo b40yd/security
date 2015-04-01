@@ -1,4 +1,5 @@
 ## Security in Metasploitable2
+Metasploitable2靶机是Web安全从业人员的练习环境
 
 ### 目录
 
