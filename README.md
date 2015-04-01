@@ -15,7 +15,15 @@ A Linux platform php5.4 unserialize use example:
     `linux-*-php5.4-unserialize-exploit.php`
 
 ### Server
-    Server security research and learning
-    
+Server security research and learning.
+- [Server environment](Server/README.md) set up
+
 ### Web
-    Web security research and learning
+Web security research and learning.
+- [Web environment](Web/README.md) set up
+
+### Linux Kali 
+- [Kali](https://www.kali.org/)
+
+### Other
+- [Exploit-DB](http://www.exploit-db.com/)
