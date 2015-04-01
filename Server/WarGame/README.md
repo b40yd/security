@@ -3,26 +3,27 @@
 并且针对不同领域方向，都有相关的关卡，玩家必须想尽办法得到下一关的密码。
 
 ### Game List
+```text
 ----------------------------------------------------------------
-| 状态    | 地址                                               |
+| 状态      | 地址                                               |
 ----------------------------------------------------------------
-| ONLINE  | [AMATERIA](http://amateria.smashthestack.org:89/)  |
+| - ONLINE  | [AMATERIA](http://amateria.smashthestack.org:89/)  |
 ----------------------------------------------------------------
-| OFFLINE | [APFEL](http://apfel.smashthestack.org:83/)        |
+| - OFFLINE | [APFEL](http://apfel.smashthestack.org:83/)        |
 ----------------------------------------------------------------
-| ONLINE  | [BLACKBOX](http://blackbox.smashthestack.org:85/)  |
+| - ONLINE  | [BLACKBOX](http://blackbox.smashthestack.org:85/)  |
 ----------------------------------------------------------------
-| ONLINE  | [BLOWFISH](http://smashthestack.org/#)             |
+| - ONLINE  | [BLOWFISH](http://smashthestack.org/#)             |
 ----------------------------------------------------------------
-| OFFLINE | [CTF](http://smashthestack.org/#)                  |
+| - OFFLINE | [CTF](http://smashthestack.org/#)                  |
 ----------------------------------------------------------------
-| ONLINE  | [IO](http://io.smashthestack.org/)                 |
+| - ONLINE  | [IO](http://io.smashthestack.org/)                 |
 ----------------------------------------------------------------
-| ONLINE  | [LOGIC](http://logic.smashthestack.org:88/)        |
+| - ONLINE  | [LOGIC](http://logic.smashthestack.org:88/)        |
 ----------------------------------------------------------------
-| ONLINE  | [TUX](http://tux.smashthestack.org:86/)            |
+| - ONLINE  | [TUX](http://tux.smashthestack.org:86/)            |
 ----------------------------------------------------------------
-
+```
 
 ### 游戏笔记
 - [IO](IO/index.md)
