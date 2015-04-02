@@ -1,8 +1,9 @@
-## 利用samba服务漏洞入侵linux主机
+## 利用samba服务漏洞
 
 Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成,samba服务对应的端口有139、445.
 
 0、使用`nmap -v -A`扫描
+```bash
 [root@kali: ~#] nmap -v -A metasploitable2 
 139/tcp   open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
 445/tcp   open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
@@ -23,7 +24,7 @@ Host script results:
 
 [root@kali: ~#] smbclient //metasploitable2/tmp
 Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.0.20-Debian]
-
+```
 1、网上搜索samba，得到利用metasploit的exploit
 exploit/multi/samba/usermap_script
 
