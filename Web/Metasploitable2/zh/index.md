@@ -16,3 +16,4 @@ Metasploitable2靶机是Web安全从业人员的练习环境
 - [RMIregistry](Linux-Ubuntu8.04-rmiregistry.md)-rmiregistry服务漏洞
 - [Druby](Linux-Ubuntu8.04-druby.md)-利用druby渗透  
 - [Telnet](Linux-Ubuntu8.04-telnet.md)-Telnet后门
+- [Twiki](Linux-Ubuntu8.04-twiki-TWikiUsers.md)-TWiki TWikiUsers远程任意命令执行漏洞
