@@ -18,3 +18,4 @@ Metasploitable2靶机是Web安全从业人员的练习环境
 - [Telnet](Linux-Ubuntu8.04-telnet.md)-Telnet后门
 - [Twiki](Linux-Ubuntu8.04-twiki-TWikiUsers.md)-TWiki TWikiUsers远程任意命令执行漏洞
 - [PHP CGI](Linux-Ubuntu8.04-php-cgi.md)-PHP CGI Argument Injection Exploit
+- [Sql Injection](Linux-Ubuntu8.04-sql-injection.md)-SQL 注入
