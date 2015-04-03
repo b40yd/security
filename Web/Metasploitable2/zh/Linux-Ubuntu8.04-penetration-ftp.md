@@ -2,7 +2,7 @@
 0、需要的工具
 - telnet
 - google，百度等搜索引擎
-- metasploit3
+- metasploit4
 - exploit-db
 - `find` and `grep`
 

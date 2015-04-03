@@ -1,6 +1,6 @@
 ##Tomcat服务管理Web应用漏洞
 0、工具
-- metasploit3
+- metasploit4
 
 1、这个漏洞是在搜索tomcat的时候看到的
 ```bash

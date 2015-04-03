@@ -1,8 +1,8 @@
 ## 暴力破解Tomcat密码
 0、工具
-- metasploit3
+- metasploit4
 
-1、不多说，tomcat服务也是开启的8180的端口，进入metasploit3 shell环境
+1、不多说，tomcat服务也是开启的8180的端口，进入metasploit4 shell环境
 ```bash
 [root@kali: ~#]msfconsole
 msf > search tomcat

@@ -1,8 +1,8 @@
 ## 暴力破解postgres密码
 0、工具
-- metasploit3
+- metasploit4
 
-1、进入metasploit3 shell环境
+1、进入metasploit4 shell环境
 ```bash 
 [root@kali: ~#] msfconsole
 msf > search postgres
