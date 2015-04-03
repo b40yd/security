@@ -4,6 +4,7 @@ Mainly records the use of web security and related tools of learning environment
 ### Web target drone environment
 - [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project)-[Download VM](http://sourceforge.net/projects/owaspbwa/)
 - [Metasploitable Linux-*](http://sourceforge.net/projects/metasploitable/files/Metasploitable2/)
+- [Hackxor](http://hackxor.sourceforge.net/cgi-bin/index.pl)
 
 ### Tools
 - [Wireshark]
@@ -16,5 +17,7 @@ Mainly records the use of web security and related tools of learning environment
 - [Hackbar]
 - [Tamper Data]
 
-### Learning Metasploitable2
-- [中文笔记](Metasploitable2/zh/index.md)
+### Learning 
+- [Metasploitable2 笔记](Metasploitable2/zh/index.md)
+- [OWASP 笔记](OWASPBWA/index.md)
+- [Hackxor 笔记](Hackxor/index.md)

@@ -19,3 +19,5 @@ sslstrip -l 10000
 ```bash
 ettercap -T -q -i eth0 -M arp:remote /目标地址/ /网关地址/
 ```
+
+btw: [视频地址](http://v.youku.com/v_show/id_XNjUxMzQ2NzYw.html)
