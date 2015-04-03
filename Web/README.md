@@ -11,6 +11,7 @@ Mainly records the use of web security and related tools of learning environment
 - [Metasploit](http://www.metasploit.com/) Using Linux [Kali](https://www.kali.org/),it have metasploit tools
 - [nmap](Linux-nmap.md)
 - [uniscan]
+- [Sqlmap](Linux-kali1.1-sqlmap-injection.md)
 
 ### Browser Tools
 - [RESTClient]
