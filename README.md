@@ -25,8 +25,9 @@ Web security research and learning.
 ### Linux Kali 
 - [Kali](https://www.kali.org/)
 
-### Other
+### Other Tools
 - [Exploit-DB](http://www.exploit-db.com/)
+- [Metasploit](http://metasploit.com/)
 
 ### FTP Tools
 - [FileZilla FTP Client](#)
