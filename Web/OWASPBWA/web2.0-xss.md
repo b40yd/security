@@ -17,7 +17,7 @@ value1from是来自用户的输入，如果用户不是输入value1from,而是�
 嵌入的JavaScript代码将会被执行
  
 
-或者用户输入的是 ` "onfocus="alert(document.cookie) ` 那么就会变成 
+或者用户输入的是 ` " onfocus="alert(document.cookie) ` 那么就会变成 
 ```html
 <input type="text" name="address1" value="" onfocus="alert(document.cookie)">
 ```
