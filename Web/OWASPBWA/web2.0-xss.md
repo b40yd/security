@@ -8,11 +8,11 @@
 ### XSS 是如何发生的呢
 假如有下面一个textbox
 ```html
-<input type="text" name="address1" value="value1from">
+<input type="text" name="xss" value="xss">
 ```
-value1from是来自用户的输入，如果用户不是输入value1from,而是输入` "/><script>alert(document.cookie)</script><!- ` 那么就会变成
+xss是来自用户的输入，如果用户不是输入xss,而是输入` "/><script>alert(document.cookie)</script><!- ` 那么就会变成
 ```html
-<input type="text" name="address1" value=""/><script>alert(document.cookie)</script><!- ">
+<input type="text" name="xss" value=""/><script>alert(document.cookie)</script><!- ">
 ```
 嵌入的JavaScript代码将会被执行
  
