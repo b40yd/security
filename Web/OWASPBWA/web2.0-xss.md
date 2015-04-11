@@ -52,6 +52,11 @@ http://example.com/test.php?id=%3Cscript%3Ealert%28%27test%20xss%21%27%29%3B%3C%
 | more            | more                  | more        |
 ---------------------------------------------------------
 ```
+### dataURI伪协议，chrome和firefox支持，例如：
+```html
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgndGVzdCB4c3MnKTs8L3NjcmlwdD4=">test xss</a>
+```
+
 ### 反射型XSS
 简单的理解就是用户输入的数据未做过滤，或者是一个用户的请求传递的数据参数未过滤，如果用户输入一段javascript或者html代码，则可以做一系列的操作。
 
