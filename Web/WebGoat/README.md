@@ -1,5 +1,5 @@
 ## WebGoat
-    WebGoat 是OWASP 组织研制出的用于进行web 漏洞实验的应用平台，用来说明web应用中存在的安全漏洞。
+WebGoat 是OWASP 组织研制出的用于进行web 漏洞实验的应用平台，用来说明web应用中存在的安全漏洞。
 WebGoat 运行在带有java 虚拟机的平台之上，当前提供的训练课程有30 多个，其中包括：
 跨站点脚本攻击（XSS）、访问控制、线程安全、操作隐藏字段、操纵参数、弱会话cookie、SQL 盲注、
 数字型SQL 注入、字符串型SQL 注入、web 服务、Open Authentication 失效、危险的HTML 注释等等。
