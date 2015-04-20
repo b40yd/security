@@ -20,9 +20,11 @@
     启动8080端口，如果嫌这样启动麻烦，可以把webgoat配置到apache服务器中！（建议这样做，这样可以运行多个web应用）
 
 0x020 Linux系统上安装
+
     跟上面的步骤一样，不再赘述，操作都基本一样，只是环境的区别。
 
 0x030 测试Webgoat是否正常运行
+
     启动浏览器，在地址栏输入http://localhost/WebGoat/attack（注意，URI是区分大小写的）
     5.2是 http://localhost/WebGoat/attack
     5.3的是 http://localhost/webgoat/attack 
