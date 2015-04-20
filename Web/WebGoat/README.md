@@ -17,7 +17,7 @@ WebGoat 提供了一系列web 安全学习的教程，某些课程也给出了�
 
 ### 目录
 - [install](Linux-kali1.1-install-tools.md) - 安装工具和环境
-- []() -
+- [HTTP Splitting](Linux-WebGoat5.4-http-splitting.md) - HTTP响应拆分
 - []() - 
 - []() -
 - []() - 
