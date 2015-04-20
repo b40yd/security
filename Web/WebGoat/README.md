@@ -16,7 +16,7 @@ WebGoat 提供了一系列web 安全学习的教程，某些课程也给出了�
 [WebScarab](https://www.owasp.org/index.php/WebScarab) - WebScarab一个用来分析使用HTTP和HTTPS协议的应用程序框架。
 
 ### 目录
-- [install](Linux-kali1.1-install-tools.md) - 安装工具和环境
+- [Install](Linux-kali1.1-install-tools.md) - 安装工具和环境
 - [HTTP Splitting](Linux-WebGoat5.4-http-splitting.md) - HTTP响应拆分
 - []() - 
 - []() -

@@ -2,7 +2,7 @@
 HTTP响应拆分漏洞，也叫CRLF注入攻击。利用CR(%0d)与LF(%0a)等特殊字符串进行攻击。HTTP头由很多被CRLF组合分离的行构成，每行的结构都是“键：值”。如果用户输入的值部分注入了CRLF字符，它有可能改变的HTTP报头结构。
 
 ### 漏洞分析
-一般网站会在HTTP头中用Location: http://example.com这种方式来进行302跳转，所以我们能控制的内容就是Location:后面的XXX某个网址。
+一般网站会在HTTP头中用`Location: http://example.com`这种方式来进行302跳转，所以我们能控制的内容就是`Location:`后面的XXX某个网址。
 
 所以一个正常的302跳转包是这样：
 ```http
