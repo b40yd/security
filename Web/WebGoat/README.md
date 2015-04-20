@@ -18,10 +18,10 @@ WebGoat 提供了一系列web 安全学习的教程，某些课程也给出了�
 ### 目录
 - [Install](Linux-kali1.1-install-tools.md) - 安装工具和环境
 - [HTTP Splitting](Linux-WebGoat5.4-http-splitting.md) - HTTP响应拆分
-- []() - 
-- []() -
-- []() - 
-- []() -
+- [Access Control Flaws](Linux-WebGoat5.4-acf.md) - 访问控制缺陷
+- [Ajax Security](Linux-WebGoat5.4-ajax-security.md) - Ajax安全
+- [Authentication Flaws](Linux-WebGoat5.4-auth-flaws.md) - 认证缺陷
+- [Buffer Overflows](Linux-WebGoat5.4-buffer-overflows.md) - 缓冲区溢出
 - []() - 
 - []() -
 - []() - 
