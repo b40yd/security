@@ -8,8 +8,15 @@ WebGoat 提供了一系列web 安全学习的教程，某些课程也给出了�
 ### WebGoat 中文教程
 [下载地址](http://www.owasp.org.cn/owasp-project/download/WebGoatv2.2.pdf/view)
 
+### 系统环境
+- [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project)
+- [Kali](https://www.kali.org/)
+
+### 工具
+[WebScarab](https://www.owasp.org/index.php/WebScarab) - WebScarab一个用来分析使用HTTP和HTTPS协议的应用程序框架。
+
 ### 目录
-- []() - 
+- [install](Linux-kali1.1-install-tools.md) - 安装工具和环境
 - []() -
 - []() - 
 - []() -
