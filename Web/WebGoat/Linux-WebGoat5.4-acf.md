@@ -57,9 +57,11 @@ c:\test~1.txt
 - 0x05 Stage 3: Bypass Data Layer Access Control
 - 0x06 Stage 4: Add Data Layer Access Control
 - 0x07 Remote Admin Access
+
 #### 工具
 - [WebScarab](https://www.owasp.org/index.php/WebScarab)
 - [Tamper Data](#)Firefox插件
+
 #### 操作流程
 - 0x01 一个基于角色的访问方案
 - 0x02 绕过基于路径访问
