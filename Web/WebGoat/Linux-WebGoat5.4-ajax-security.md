@@ -2,7 +2,7 @@
 AJAX 技术的一项关键元素是XMLHttpRequest（XHR），该技术允许客户端向服务端发起异步调用。
 
 ### 使用场景
-目前ajax的应用无处不在，当年ajax的刚出现可是占尽了风头，局部刷新的动态请求。目前特别是评论、文章内容的提交等应用程序对它的应用。
+目前ajax的应用无处不在，AJax的一出现就非常轰动，局部刷新的动态请求。目前特别是评论、文章内容的提交等应用程序对它的应用。
 
 ### 漏洞分析
 Ajax中没有固有的安全漏洞。
@@ -121,6 +121,14 @@ Here is the file content: &file;
 <A HREF="http://example.com/attacker.xml">http://example.com/attacker.xml</A>
 
 XPath/XQuery注入,XPath和XQuery是能够查询XML文档的语言，类似于结构化查询语言（SQL）。事实上，许多流行的数据库允许利用XPath和XQuery来查询数据库。在许多情况下，攻击者不能够直接访问XML数据，但是，攻击者可以用部分数据来创建XPath和XQuery语句，而这些语句能够用来查询XML。这样，攻击者就能够通过精心构造的输入来注入任意的查询，以此来获得数据，而这些数据在正常情况下是不允许攻击者访问的。
+利用下述XPath表达式就能够获得XML数据：
+```text
+//*[contains(name，'Attacker-Data')]/name
+```
+通过指定数据为`x'）] | //*| //*[contains（name，'y`，攻击者能够获得这个XML文件的完整内容,如下的XPath表达式
+```text
+//*[contains(name，'x')] | //*| //*[contains(name，'y')]/name
+```
 
 - 0x04 JSON注入
 
