@@ -116,10 +116,13 @@ Here is the file content: &file;
 
 可扩展样式表语言（XSL）除了注入数据到XML之外，作为XML注入的结果，使代码运行也是可能的。XSL由XSL转换（XSL Transform，XSLT）、XML路径语言（XML Path Language，XPath）表达式和XSL格式化对象（Formatting Object，XSL-FO）组成，并且允许在XML文件中使用样式表。这种样式表能够把已有的XML数据转换成新的XML数据。
 例如:
+```html
 <link>http://example.com/attacker.xml</link>
+```
 为了表示上述XML，应用XSLT将上述XML转换为如下的HTML，并传送给Web浏览器：
+```html
 <A HREF="http://example.com/attacker.xml">http://example.com/attacker.xml</A>
-
+```
 XPath/XQuery注入,XPath和XQuery是能够查询XML文档的语言，类似于结构化查询语言（SQL）。事实上，许多流行的数据库允许利用XPath和XQuery来查询数据库。在许多情况下，攻击者不能够直接访问XML数据，但是，攻击者可以用部分数据来创建XPath和XQuery语句，而这些语句能够用来查询XML。这样，攻击者就能够通过精心构造的输入来注入任意的查询，以此来获得数据，而这些数据在正常情况下是不允许攻击者访问的。
 利用下述XPath表达式就能够获得XML数据：
 ```text
