@@ -15,7 +15,7 @@ $ service mysqld status
 ```
 
 0x03 修改主机中的hosts文件，win7是在C:\Windows\System32\drivers\etc目录下，虚拟机的网络适配器应该设为自定义模式(此模式下虚拟机和主机在一个特定的虚拟网络下)，如将主机的host 文件中添加如下内容:
-``text
+```text
 192.168.199.149 wraithmail   
 192.168.199.149 wraithbox  
 192.168.199.149 cloaknet  
