@@ -70,92 +70,49 @@
     }
 
 
+    
     class Shops{
         private $mux = false;
-        //private $unclock = false;
-        private $lock = false;
-
         private $shops = array();
-
-        private $shop = array(
-                            "goods_name" => "",
-                            "goods_id" => 0,
-                            "goods_price" => 0
-                            );
 
         public function test_shops($num){
             if(is_integer($num)){
                 for ($i=0; $i < $num; $i++) { 
                     # code...
-                    $shop["goods_id"] = md5($i);
-                    $shop["goods_name"] = "the {$i} goods.";
-                    $shop["goods_price"] = (($i == 0)?4:($i * 2) + ($i * 2) % 10);
-                    array_push($shops, $shop);
+                    $obj = new Shop();
+                    $obj->setId(i);
+                    $obj->setName("the {$i} goods.");
+                    $obj->setPrice((($i == 0)?4:($i * 2) + ($i * 2) % 10));
+                    $obj->setNum($i);
+                    array_push($this->shops, serialize($obj));
                 }
             }
         }
 
-        public function addShop(array $arr){
-            foreach ($this->shop as $key => $value) {
-                    # code...
-                if(array_key_exists($key, $arr)){
-                    continue;
-                }else{
-                    return false;
-                }
-            }
+        public function addShop(Shop $obj){
 
-            array_push($this->shops, $arr);
-            return $this;
-        }
-
-        public function addShopGroup(array $arr){
-
-            $status = array_map(function(array $arr1){
-                foreach ($this->shop as $key => $value) {
-                    # code...
-                    if(array_key_exists($key, $arr1)){
-                        continue;
-                    }else{
-                        return false;
-                    }
-                }
-                return true;
-            },$arr);
-
-            if(is_array($status)){
-                foreach ($status as $key => $value) {
-                    # code...
-                    if(!$value){
-                        return ;
-                    }
-                }
-            }
-
-            foreach ($arr as $key => $value) {
-                # code...
-                array_push($this->shops, $value);
-            }
-            
+            array_push($this->shops, serialize($obj));
             return $this;
         }
 
         public function getShopsAll(){
-            return $this->shops;
-        }
-
-        public function getShop(){
-            return $this->shop;
+            $tmp = array();
+            foreach ($this->shops as $key => $value) {
+                # code...
+                array_push($tmp,unserialize($value));
+            }
+            return $tmp;
         }
 
         public function getShopById($id){
             foreach ($this->shops as $key => $value) {
                 # code...
-                if($value['goods_id'] === $id){
-                    return $value;
+                $obj = unserialize($value);
+                if($obj->getId() === $id){
+                    return $obj;
                 }
             }
-            return array();
+            return null;
         }
 
     }
@@ -164,13 +121,19 @@
 假设这个对象用在非线程安全中的话，这样用：
 ```php
 <?php
-    $shop_obj = new Shop();
+    $shop_obj = new Shops();
     $shop_obj->test_shops(10);
-
+    $obj = $shop_obj->getShopById(md5(9));
+    $obj->setNum($obj->getNum()-1);
+    //...balabala...
 ?>
 ```
+在未实现锁的操作前，在非线程安全里面并发执行，就会造成臆想不到的结果，结果可能是正数也可能是负数。
+
 
 
 ### 危害
+并行计算未处理好，计算的结果会造成混乱。多个线程对一个数据操作，造成资源竞争最后的结果是最后线程操作成功的结果。
 
 ### 解决方案
+可以对并发计算的地方添加队列，互斥锁等方式解决资源竞争等问题。
