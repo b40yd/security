@@ -46,7 +46,7 @@ xpath注入和字符串型、数据库后门、数字型盲注入、字符串型
 //sqlinject.php
 $mysqli = new mysqli("localhost","root","","test");
 $mysqli->query("set names 'utf8");
-//多条sql语句
+//多条sql语句，1';UPDATE user SET username='testinject' WHERE id = '1
 $sql = "select id,name from `user` where `id`='".$_POST['id']."'";
 echo $sql;
 if ($mysqli->multi_query($sql)){//multi_query()执行一条或多条sql语句
