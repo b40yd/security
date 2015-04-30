@@ -45,7 +45,7 @@
         die("username and passwd is empty!");
     }
 
-    $sql += " limit 0,1";
+    $sql .= " limit 0,1";
     $query = mysql_query($sql);
     //...
 ?>
