@@ -10,8 +10,8 @@ HTTP协议，TCP/IP协议等。
 ### 漏洞分析
 web服务都是运行在http协议上的。所以，密码是明文传输的，如果在局域网中有恶意用户拦截，arp欺骗等手段，是很容易窃取到用户的登录信息等。
 例如使用WireShark等抓包工具进行抓取到的数据：
-![抓取到的数据](http_data.png)
-![抓取到的用户名密码数据](http_data1.png)
+![抓取到的数据](https://github.com/wackonline/security/blob/master/Web/WebGoat/http_data.png)
+![抓取到的用户名密码数据](https://github.com/wackonline/security/blob/master/Web/WebGoat/http_data1.png)
 
 ```
 HTTP/1.1 200 OK
