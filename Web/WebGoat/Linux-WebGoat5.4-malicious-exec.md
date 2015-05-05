@@ -51,7 +51,7 @@ def injectFile(payload,fname):
 if __name__ == "__main__":
         parser = argparse.ArgumentParser()
         parser.add_argument("filename",help="the bmp file name to infected")
-        parser.add_argument("js_payload",help="the payload to be injected. For exampe: \"alert(1);\"")
+        parser.add_argument("js_payload",help="the payload to be injected. For example: \"alert(1);\"")
         args = parser.parse_args()
         injectFile(args.js_payload,args.filename)
 ```
