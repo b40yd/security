@@ -7,7 +7,21 @@
 数据提交，web应用API访问、URL访问等。
 
 ### 漏洞分析
+数据有效性和完整性未检测，在篡改后会正常执行。
+```
+<form>
+    <input type="text" value="123" name="disable" disabled="disabled" />
+    <input type="submit" value="submit" name="submit" />
+</form>
+```
+本来数据是不允许修改的，如果把`disabled`属性去掉，就可以修改数据提交了。这样就是造成参数篡改。
+```
+http://example.com/user.php?gid=1
+```
+篡改`gid`数据,改为`' or 1=1 --'`这样的数据，如果可能存在sql注入，就会查询出所有数据，也就是成功的执行SQL注入。
 
 ### 危害
+会篡改数据库的数据，执行SQL注入等。
 
 ### 解决方案
+做数据完整性和有效性的安全检测。
