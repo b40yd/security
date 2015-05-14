@@ -44,5 +44,11 @@ echo -e "Install Mate Desktop ...\n"
 apt-get install kali-defaults kali-root-login desktop-base mate-core mate-desktop-environment mate-desktop-environment-extra -y
 echo -e "Settings defaults session-name...\n"
 update-alternatives --config x-session-manager
+echo -e "Settings LC_ALL ...\n"
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+dpkg-reconfigure locales
 
 exit 0
