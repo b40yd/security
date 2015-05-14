@@ -22,7 +22,6 @@ start menu太丑了，所以在网上找了个win的svg图。
 
 Linux的没找到，找到了个png的，可以用工具转换svg
 
-
 ![linux.png](Linux.png)
 
 ```
