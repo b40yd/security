@@ -10,7 +10,7 @@
 - [Install Mint Themes to Kali](Kali1.1a/Install-Mint-Themes.md) - 安装mint桌面主题
 
 #### 自动安装脚本
-自动安装工具脚本不包含安装显卡驱动，显卡需要根据自己的情况去安装。
+自动安装工具[脚本](Kali1.1a/autogen.sh)不包含安装显卡驱动，显卡需要根据自己的情况去安装。
 ```sh
 root@HackTribe:~/ # chmod +x autogen.sh && ./autogen.sh 
 ```
