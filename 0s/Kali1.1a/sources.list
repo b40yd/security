@@ -1,0 +1,28 @@
+# 
+
+# deb cdrom:[Debian GNU/Linux 7.0 _Kali_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150312-17:50]/ kali contrib main non-free
+
+#deb cdrom:[Debian GNU/Linux 7.0 _Kali_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150312-17:50]/ kali contrib main non-free
+
+deb http://mirrors.aliyun.com/kali kali main non-free contrib
+deb-src http://mirrors.aliyun.com/kali kali main non-free contrib
+deb http://mirrors.aliyun.com/kali-security kali/updates main contrib non-free
+
+deb http://mirrors.aliyun.com/debian wheezy main
+deb http://mirrors.aliyun.com/debian jessie main
+
+#debian_wheezy
+
+deb http://ftp.sjtu.edu.cn/debian wheezy main non-free contrib
+deb-src http://ftp.sjtu.edu.cn/debian wheezy main non-free contrib 
+deb http://ftp.sjtu.edu.cn/debian wheezy-proposed-updates main non-free contrib 
+deb-src http://ftp.sjtu.edu.cn/debian wheezy-proposed-updates main non-free contrib 
+deb http://ftp.sjtu.edu.cn/debian-security wheezy/updates main non-free contrib 
+deb-src http://ftp.sjtu.edu.cn/debian-security wheezy/updates main non-free contrib 
+deb http://mirrors.163.com/debian wheezy main non-free contrib 
+deb-src http://mirrors.163.com/debian wheezy main non-free contrib 
+deb http://mirrors.163.com/debian wheezy-proposed-updates main non-free contrib 
+deb-src http://mirrors.163.com/debian wheezy-proposed-updates main non-free contrib 
+deb-src http://mirrors.163.com/debian-security wheezy/updates main non-free contrib 
+deb http://mirrors.163.com/debian-security wheezy/updates main non-free contrib
+deb http://http.debian.net/debian wheezy-backports main
