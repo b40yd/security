@@ -5,7 +5,7 @@
 
 
 0x02、UEFI模式安装
-我最开始也在这里卡了很久，根据不同的主板设置步骤可能不一样，我的机器是acer vn7-591g默认是不能修改uefi的secure boot的，需要设置BIOS的超级密码才行。默认是可以使用legacy这个模式的，但是secure boot没有disable，一样装不了。这里需要设置secure boot = disable。
+我最开始也在这里卡了很久，根据不同的主板设置步骤可能不一样，我的机器是acer vn7-591g默认是不能修改uefi的`secure boot`的，需要设置BIOS的超级密码才行。默认是可以使用`legacy`这个模式的，但是`secure boot`没有`disable`，一样装不了。这里需要设置`secure boot = disable`。
 然后选择U盘启动即可。
 
 0x03、显卡驱动安装
