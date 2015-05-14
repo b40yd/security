@@ -18,11 +18,12 @@ cp -rfv ./* /usr/share/icons/
 然后就可以通过主题管理器选择mint系列的主题了
 
 start menu太丑了，所以在网上找了个win的svg图。
-![win](win.svg)
+![win](Win.svg)
 
 Linux的没找到，找到了个png的，可以用工具转换svg
 
-![linux.png](linux.png)
+
+![linux.png](Linux.png)
 
 ```
 cp -rfv win.svg /usr/share/icons/Mint-X/places/24/start-here.svg
