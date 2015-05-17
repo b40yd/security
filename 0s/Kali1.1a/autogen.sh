@@ -28,7 +28,7 @@ apt-get install ncurses-dev -y
 apt-get install libtool -y
 apt-get install gcc cmake make automake autoconf -y
 echo -e "Change sources.list...\n"
-sed -i 's/#deb http://mirrors.aliyun.com/debian jessie main/deb http://mirrors.aliyun.com/debian jessie main' /etc/apt/sources.list
+sed -i 's|#deb http://mirrors.aliyun.com/debian jessie main|deb http://mirrors.aliyun.com/debian jessie main|g' /etc/apt/sources.list
 apt-get update
 apt-get install libgnutls-deb0-28 -y
 apt-get install bison -y
@@ -36,7 +36,7 @@ apt-get install golang -y
 echo -e "Installing emacs24...\n"
 apt-get install emacs24 -y
 echo -e "Change sources.list...\n"
-sed -i 's/deb http://mirrors.aliyun.com/debian jessie main/#deb http://mirrors.aliyun.com/debian jessie main' /etc/apt/sources.list
+sed -i 's|deb http://mirrors.aliyun.com/debian jessie main|#deb http://mirrors.aliyun.com/debian jessie main|g' /etc/apt/sources.list
 apt-get update
 echo -e "Solve p11-kit: invalid config filename,warning...\n"
 mv -v /etc/pkcs11/modules/gnome-keyring{-,.}module
