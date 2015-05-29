@@ -28,6 +28,7 @@ Web security research and learning.
 ### Other Tools
 - [Exploit-DB](http://www.exploit-db.com/)
 - [Metasploit](http://metasploit.com/)
+- [Lynis](https://cisofy.com/download/lynis/)
 
 ### FTP Tools
 - [FileZilla FTP Client](#)
