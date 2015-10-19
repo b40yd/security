@@ -57,7 +57,7 @@ body {
 <head><title>test</title></head>
 <body>
 	<iframe src="http://www.example.com/" height=0 width=0></iframe>
-	<img src="http://www.example.com/1.png"></center>
+	<img src="http://www.example.com/1.png">
 </body>
 </html>
 ```
