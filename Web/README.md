@@ -22,3 +22,4 @@ Mainly records the use of web security and related tools of learning environment
 - [Metasploitable2 笔记](Metasploitable2/zh/index.md)
 - [OWASP 笔记](OWASPBWA/index.md)
 - [Hackxor 笔记](Hackxor/index.md)
+- [Darklink checking](dark.py)
