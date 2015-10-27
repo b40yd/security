@@ -7,3 +7,7 @@ webshell test and detection demo.
 http://localhost/webshell/base64_decode.php?php=cGhwaW5mbygpOw==
 
 ```
+####preg_replace
+```
+http://localhost/webshell/preg_replace.php
+```
