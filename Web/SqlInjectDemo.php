@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "meiyoumima", "mywebretine");
+$mysqli = new mysqli("localhost", "root", "meiyoumima", "mySqlInject");
 
 /* check connection */
 if ($mysqli->connect_errno) {
