@@ -1,0 +1,25 @@
+Build an application on CodeIgniter 2.1.0:
+
+// application/controllers/xssdemo.php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Xssdemo extends CI_Controller {
+
+        public function index() {
+            $data['xss'] =
+$this->security->xss_clean($this->input->post('xss'));
+            $this->load->view('xssdemo', $data);
+        }
+}
+
+// application/views/xssdemo.php
+<form method=post>
+                <textarea name=xss><?php echo htmlspecialchars($xss);
+?></textarea>
+                <input type=submit />
+                </form>
+        <p>XSS:
+        <hr />
+    <?php echo $xss ?>
+
+Launch http://app-uri/index.php/xssdemo and try above vectors.
