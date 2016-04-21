@@ -25,4 +25,4 @@ Mainly records the use of web security and related tools of learning environment
 - [Darklink checking](Dark_chain_detection.md)
 
 ### Web渗透案例
-- [OWASPBWA](OWASPBWA/index.md)主要sql注入、XSS等实例代码
+- [OWASPBWA](OWASPBWA/index.md) - 主要sql注入、XSS等实例代码
