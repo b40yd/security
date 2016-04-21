@@ -23,3 +23,6 @@ Mainly records the use of web security and related tools of learning environment
 - [OWASP 笔记](OWASPBWA/index.md)
 - [Hackxor 笔记](Hackxor/index.md)
 - [Darklink checking](Dark_chain_detection.md)
+
+### Web渗透案例
+- [OWASPBWA](OWASPBWA/index.md)主要sql注入、XSS等实例代码
