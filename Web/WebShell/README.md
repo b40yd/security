@@ -11,3 +11,6 @@ http://localhost/webshell/base64_decode.php?php=cGhwaW5mbygpOw==
 ```
 http://localhost/webshell/preg_replace.php
 ```
+
+####JSP WebShell
+[Jsp WebShell](webshell.jsp) Jsp WebShell 常用一句话集合
