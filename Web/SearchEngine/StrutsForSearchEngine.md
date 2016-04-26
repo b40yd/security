@@ -53,3 +53,5 @@ inurl: *.action 银行
 ```
 site:example.com inurl: *.action 
 ```
+
+* [Index](SearchEngineSkill.md) 索引目录
