@@ -18,7 +18,7 @@ if [ $tools = "" ];then
 	echo -e	"\033[0;31m ERROR:\thttp not found."
 	echo -e "\033[0;31m Pealse install httpie tools."
 	echo -e "\033[0;31m github project:\thttps://github.com/jkbrzt/httpie"
-	
+	exit 1;	
 fi
 
 if [[ "$1" = "" || "$2" = "" ]];then
