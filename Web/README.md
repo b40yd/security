@@ -12,6 +12,7 @@ Mainly records the use of web security and related tools of learning environment
 - [nmap](Linux-nmap.md)
 - [uniscan]
 - [Sqlmap](Linux-kali1.1-sqlmap-injection.md)
+- [S2-032](s2-032.sh) Struts2 S2-032 批量检测工具/SHELL版本
 
 ### Browser Tools
 - [RESTClient]
