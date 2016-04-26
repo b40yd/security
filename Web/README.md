@@ -18,6 +18,9 @@ Mainly records the use of web security and related tools of learning environment
 - [S2-029](s2-029-poc.md) OGNL绕过，远程代码执行
 - [S2-032](s2-032-poc.md) 远程代码执行
 
+### Other Skill
+- [Struts搜素引擎使用](SearchEngine/StrutsForSearchEngine.md)
+
 ### Browser Tools
 - [RESTClient]
 - [Hackbar]
