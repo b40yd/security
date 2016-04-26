@@ -14,6 +14,10 @@ Mainly records the use of web security and related tools of learning environment
 - [Sqlmap](Linux-kali1.1-sqlmap-injection.md)
 - [S2-032](s2-032.sh) Struts2 S2-032[POC](s2-032-poc.md) 批量检测工具/SHELL版本
 
+### PoC
+- [S2-029](s2-029-poc.md) OGNL绕过，远程代码执行
+- [S2-032](s2-032-poc.md) 远程代码执行
+
 ### Browser Tools
 - [RESTClient]
 - [Hackbar]
