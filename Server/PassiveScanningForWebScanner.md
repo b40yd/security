@@ -3,7 +3,7 @@
 
 #### 使用场景
 在特定的情况下需要进行SQL注入,XSS等漏洞进行渗透检测。
-例如,需要验证http://www.example.com/query.php?id=1&uname=7ym0n,中的GET参数和POST表单。HTML代码如下：
+例如,需要验证`http://www.example.com/query.php?id=1&uname=7ym0n`,中的GET参数和POST表单。HTML代码如下：
 ```html
 <html>
 	<head>
@@ -120,7 +120,7 @@ var request_options = {
 	https:false
 }
 ```
-POST数据是以两个`\r\n`or`0x0a0x0d`区分HTTP头和传输数据的。所以以两个换行符分割传输数据和HTTP头。
+POST数据是以两个`\r\n`or`0x0d 0x0a`区分HTTP头和传输数据的。所以以两个换行符分割传输数据和HTTP头。
 
 定义一个`buffer_find_body`:
 ```nodejs
@@ -134,7 +134,7 @@ function buffer_find_body(b){
 }
 ```
 
-通过`buffer_find_body`找到HTTP头结束位置,开始解析HTTP头数据,每一个头属性定义都以一个`\r\n`or`0x0a0x0d`区分,定义`parse_request`以换行符分割,使用正则匹配`scheme://host:port/path?query`等:
+通过`buffer_find_body`找到HTTP头结束位置,开始解析HTTP头数据,每一个头属性定义都以一个`\r\n`or`0x0d 0x0a`区分,定义`parse_request`以换行符分割,使用正则匹配`scheme://host:port/path?query`等:
 ```
 function parse_request(buffer){
 	var buf = buffer.toString('utf8');
@@ -220,6 +220,7 @@ function http_req(req){
 
 ```
 这样就完成了一个简单的代理服务器。现在能获取到GET和POST表单数据,剩下的需要做的就是拆分数据进行自动化渗透测试。
+#### 使用第三方渗透检测工具
 ##### 使用SQLmap测试SQL注入。
 使用`sqlmap`需要用到系统命令行调用,加载`child_process`。
 ```var exec = require('child_process').exec;```
@@ -231,7 +232,7 @@ exec(cmd, function (error, stdout, stderr) {
     console.log(stdout);
   });
 ```
-到此处基本就完成了,图1中的被动扫描的整个流程，该代码没有优化，只是演示整个流程,当作生产环境需要优化。
+需要什么策略,就加上即可,很方便的进行测试神马的,到此处基本就完成了图1中的被动扫描的整个流程，该代码没有优化，只是演示整个流程,当作生产环境需要优化。
 
 
 附上[proxy代码地址](https://github.com/7ym0n/security/blob/master/Server/http_proxy.js),注意该源码没有实现被动扫描。
