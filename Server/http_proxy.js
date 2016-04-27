@@ -45,7 +45,7 @@ net.createServer(function (client)
 		else
 		{
 			var _bufArr = buf.match(/^([A-Z]+)\s([^\s]+)\sHTTP\/(\d.\d)/);
-			console.log(_bufArr);
+			//console.log(_bufArr);
 			if (_bufArr && _bufArr[1] && _bufArr[2] && _bufArr[3])
 			{
 				var host = buf.match(/Host:\s+([^\n\s\r]+)/)[1];
@@ -74,11 +74,12 @@ net.createServer(function (client)
 		if(!options.https){
 			http_req(options);
 		}
-		console.log(options);
+		//console.log(options);
 		
 	});
 	function http_req(req){
 		console.log(req.method+' '+req.hostname+':'+req.port);
+		console.log("\r\nfirst buf:\r\n"+buf);
 		if (req.method != 'CONNECT')
 		{
 			var _body_pos = buffer_find_body(buf);
@@ -98,10 +99,11 @@ net.createServer(function (client)
 			_buf_1.copy(re);
 			_buf_2.copy(re,_buf_1.length);
 			buf = re;
+			console.log("\r\nreplace buf:\r\n"+buf);
 		}
 		var server = net.createConnection(req.port,req.hostname);
-		client.on("data", function(data){ server.write(data); });
-		server.on("data", function(data){ client.write(data); });
+		server.on("data", function(data){ console.log("\r\nServer Data:\r\n"+data);client.write(data); });
+		console.log("\r\nwrite buf:\r\n"+buf);
 		if (req.method == 'CONNECT')
 			client.write(new Buffer("HTTP/1.1 200 Connection established\r\nConnection: close\r\n\r\n"));
 		else
