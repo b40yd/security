@@ -79,7 +79,7 @@ net.createServer(function (client)
 	});
 	function http_req(req){
 		console.log(req.method+' '+req.hostname+':'+req.port);
-		console.log("\r\nfirst buf:\r\n"+buf);
+		//console.log("\r\nfirst buf:\r\n"+buf);
 		if (req.method != 'CONNECT')
 		{
 			var _body_pos = buffer_find_body(buf);
@@ -95,15 +95,24 @@ net.createServer(function (client)
 			}
 			var _buf_1 = new Buffer(_header,'utf8');
 			var _buf_2 = buf.slice(_body_pos);
+			
+			//POST FILE
+			//console.log(_buf_1.toString('utf8'));
+			//var _content_type = _buf_1.toString('utf8').match(/Content-Type:.+/g)[0].split("=");
+			//_file_body = _buf_2.toString('utf8').split(_content_type[1]);	
+			//console.log("file body: "+_file_body.length+"==="+ _file_body[1]);
+			//_file_body[1] + "";
+			//console.log("content type: "+_content_type.length+"==="+_content_type[1]);
+			//console.log(_content_type);
 			var re = new Buffer(_buf_1.length + _buf_2.length);
 			_buf_1.copy(re);
 			_buf_2.copy(re,_buf_1.length);
 			buf = re;
-			console.log("\r\nreplace buf:\r\n"+buf);
+			//console.log("\r\nreplace buf:\r\n"+buf);
 		}
 		var server = net.createConnection(req.port,req.hostname);
 		server.on("data", function(data){ console.log("\r\nServer Data:\r\n"+data);client.write(data); });
-		console.log("\r\nwrite buf:\r\n"+buf);
+		//console.log("\r\nwrite buf:\r\n"+buf);
 		if (req.method == 'CONNECT')
 			client.write(new Buffer("HTTP/1.1 200 Connection established\r\nConnection: close\r\n\r\n"));
 		else
