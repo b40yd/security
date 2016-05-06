@@ -49,7 +49,7 @@ if [ "$host" = "" ];then
 fi
 
 echo -e "\033[0;32mCreating PNG file..."
-echo -e $EXP > exp;
+echo -e $EXP > $exp;
 
 # split string and replace
 data="-F \"$2\""
