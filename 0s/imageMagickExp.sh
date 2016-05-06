@@ -62,5 +62,7 @@ data=${data//&/\" -F \"}
 
 echo -e "curl -k -H \"Expect:\" $data -F \"files=@$exp\" $host"
 $(eval echo -e "curl -k -H \"Expect:\" $data -F \"files=@$exp\" $host")
+rm -rfv $exp;
 echo -e "Done\n:)..."
+
 exit 0
