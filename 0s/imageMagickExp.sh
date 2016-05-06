@@ -1,4 +1,17 @@
 #!/bin/bash
+#
+# ImageMagick Exp checking tools.
+# author: 7ym0n.q6e/bb.qnyd@gmail.com
+# Copyleft (C) 2016 7ym0n.q6e.  All rights reserved.
+#
+# ImageMagick Exp is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ImageMagick Exp.  If not, see <http://www.gnu.org/licenses/>.
+#
 CURL=`which curl`
 if [ "CURL" = "" ];then
 	echo "Please install curl tool.";
