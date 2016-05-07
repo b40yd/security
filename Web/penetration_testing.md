@@ -17,7 +17,7 @@
 URL=`cat 1.log | grep -Eo "<a[^>]+?href=[\"']?([^\"']+)[\"']?[^>]*>([^<]+)</a>"`
 #过滤do或者jsp或者action的query请求。
 JSP=`echo $URL | grep -Eo "http[s]?://([A-Za-z0-9\.]*)?/[0-9a-zA-Z0-9/]+([^\.jsp]+)\.jsp"`
-DO=`echo $P | grep -Eo "http[s]?://([A-Za-z0-9\.]*)?/[0-9a-zA-Z0-9/]+\.do([\?]?[^\"']+)?"`
+DO=`echo $URL | grep -Eo "http[s]?://([A-Za-z0-9\.]*)?/[0-9a-zA-Z0-9/]+\.do([\?]?[^\"']+)?"`
 
 ANYLIST=()
 LIST=$JSP$DO
