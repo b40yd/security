@@ -20,7 +20,7 @@ Mainly records the use of web security and related tools of learning environment
 
 ### Other Skill
 - [Struts搜素引擎使用](SearchEngine/StrutsForSearchEngine.md)
-- [PenetrationTesting](WebShell/penetration_testing.md] 自动化测试脚本分析 
+- [PenetrationTesting](WebShell/penetration_testing.md) 自动化测试脚本分析 
 
 ### Browser Tools
 - [RESTClient]
