@@ -1,7 +1,7 @@
 ### shellcode生成
 远程调用的RemoteObject需要使用JDK1.6版本编译生成，这样才能保证通用性，亲测！
-### 生成十六进制python脚本
-脚本[hex.py](../../hex.py)和[toHex.py](../../toHex.py)
+### 生成十六进制的python脚本
+把远程调用的jar包，生成十六进制，脚本[hex.py](../../hex.py)和[toHex.py](../../toHex.py)
 ```
 #!/usr/bin/env python
 import binascii
