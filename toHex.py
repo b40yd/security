@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import binascii
+import sys
 
 #convert string to hex
 def toHex(s):
@@ -16,6 +17,6 @@ def toHex(s):
 def toStr(s):
     return s and chr(atoi(s[:2], base=16)) + toStr(s[2:]) or ''
 
-with open("obj.class", 'rb') as f:
+with open(sys.argv[1], 'rb') as f:
 	s=f.read()
 	print toHex(s)
