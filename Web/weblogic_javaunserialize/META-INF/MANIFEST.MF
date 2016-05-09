@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: org.heysec.exp
+Main-Class: org.heysec.exp.Main
+

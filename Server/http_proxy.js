@@ -139,7 +139,7 @@ net.createServer(function (client)
 			}
 			_header = _header.replace(/(proxy-)?connection:.+\r\n/ig,'')
 					.replace(/Keep-Alive:.+\r\n/i,'')
-					.replace("\r\n",'\r\nConnection: close\r\n');
+					.replace("\r\n",'\r\nConnection: close\r\n')
 			//console.log("header: "+_header);
 			if (req.httpVersion == '1.1')
 			{

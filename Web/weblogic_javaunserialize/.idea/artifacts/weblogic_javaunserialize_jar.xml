@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="weblogic_javaunserialize:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/weblogic_javaunserialize_jar</output-path>
+    <root id="archive" name="weblogic_javaunserialize.jar">
+      <element id="module-output" name="weblogic_javaunserialize" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/commons-collections-3.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/weblogic.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/production/weblogic_javaunserialize/org" />
+    </root>
+  </artifact>
+</component>
