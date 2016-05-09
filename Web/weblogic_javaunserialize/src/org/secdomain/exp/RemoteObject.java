@@ -1,4 +1,4 @@
-package org.heysec.exp;
+package org.secdomain.exp;
 import java.rmi.Remote;
 
 public interface RemoteObject extends Remote {

@@ -1,4 +1,4 @@
-package org.heysec.exp;
+package org.secdomain.exp;
 
 import java.io.OutputStream;
 import java.net.Socket;

