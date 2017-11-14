@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -ex
+OS="debian"
 VER="latest"
 DIR=`date "+%Y%m%d"`
 

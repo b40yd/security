@@ -52,5 +52,5 @@ RUN mv /opt/nginx/conf/modsecurity.conf /opt/nginx/conf/modsecurity.conf.backup 
 
 WORKDIR /var/www/html
 
-ENTRYPOINT [ "/opt/nginx/sbin/nginx", "-g", "daemon off;" ]
+#ENTRYPOINT [ "/opt/nginx/sbin/nginx", "-g", "daemon off;" ]
 EXPOSE 80 443
