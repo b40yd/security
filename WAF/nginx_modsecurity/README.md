@@ -49,12 +49,10 @@ http {
 
 modsecurity.conf 配置文件：
 ```
+
 SecRuleEngine On
 
-
-
 SecRequestBodyAccess On
-
 
 SecRule REQUEST_HEADERS:Content-Type "(?:application(?:/soap\+|/)|text/)xml" \
      "id:'200000',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=XML"
@@ -64,8 +62,6 @@ SecRule REQUEST_HEADERS:Content-Type "application/json" \
 
 SecRequestBodyLimit 13107200
 SecRequestBodyNoFilesLimit 131072
-
-
 SecRequestBodyLimitAction Reject
 
 SecRule REQBODY_ERROR "!@eq 0" \
@@ -96,49 +92,20 @@ SecPcreMatchLimitRecursion 1000
 SecRule TX:/^MSC_/ "!@streq 0" \
         "id:'200005',phase:2,t:none,deny,msg:'ModSecurity internal error flagged: %{MATCHED_VAR_NAME}'"
 
-
-
 SecResponseBodyAccess On
-
 SecResponseBodyMimeType text/plain text/html text/xml
-
 SecResponseBodyLimit 524288
-
 SecResponseBodyLimitAction ProcessPartial
-
-
-
 SecTmpDir /tmp/
-
 SecDataDir /tmp/
-
-
-
-
-
-
-
-
-
-
-
 SecAuditEngine On
 SecAuditLogRelevantStatus "^(?:5|4(?!04))"
-
 SecAuditLogParts ABIJDEFHZ
-
 SecAuditLogType Serial
 SecAuditLog /var/log/modsecurity/modsec_audit.log
-
-
-
-
 SecArgumentSeparator &
-
 SecCookieFormat 0
-
 SecUnicodeMapFile unicode.mapping 20127
-
 SecStatusEngine On
 
 include /opt/owasp-modsecurity-crs/crs-setup.conf
@@ -169,6 +136,7 @@ include /opt/owasp-modsecurity-crs/rules/RESPONSE-954-DATA-LEAKAGES-IIS.conf
 include /opt/owasp-modsecurity-crs/rules/RESPONSE-959-BLOCKING-EVALUATION.conf
 include /opt/owasp-modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf
 include /opt/owasp-modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
+
 
 ```
 
