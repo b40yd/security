@@ -43,7 +43,7 @@ echo "include /opt/owasp-modsecurity-crs/rules/RESPONSE-959-BLOCKING-EVALUATION.
 echo "include /opt/owasp-modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf" >> /opt/nginx/conf/modsecurity.conf && \
 echo "include /opt/owasp-modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf" >> /opt/nginx/conf/modsecurity.conf
 
-RUN mkdir -pv /var/log/modsecurity
+RUN mkdir -pv /var/log/modsecurity && rm -rfv /opt/Modsecurity /opt/modsecurity-nginx /opt/nginx-1.12.2 /opt/nginx-1.12.2.tar.gz
 ADD modsecurity.conf /opt/nginx/conf/
 ADD nginx.conf /opt/nginx/conf/
 #RUN mkdir -pv /opt/nginx/conf/vhost 
@@ -52,5 +52,5 @@ RUN mv /opt/nginx/conf/modsecurity.conf /opt/nginx/conf/modsecurity.conf.backup 
 
 WORKDIR /var/www/html
 
-#ENTRYPOINT [ "/opt/nginx/sbin/nginx", "-g", "daemon off;" ]
+ENTRYPOINT [ "/opt/nginx/sbin/nginx", "-g", "daemon off;" ]
 EXPOSE 80 443
