@@ -148,7 +148,9 @@ include /opt/owasp-modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.
 #### 启动命令
 动态加载配置文件和应用程序目录（以PHP程序为例）；
 ```shell
-    docker run -v $(pwd)/modsecurity.conf:/opt/nginx/conf/modsecurity.conf -v $(pwd)/nginx.conf:/opt/nginx/conf/nginx.conf -v /var/log/modsecurity:/var/log/modsecurity -d nginx_modsecurity:latest
-    docker run -v /var/www/html/:/var/www/html/ -d webdevops/php:latest
+    docker run -p 80:80 -v $(pwd)/modsecurity.conf:/opt/nginx/conf/modsecurity.conf -v $(pwd)/nginx.conf:/opt/nginx/conf/nginx.conf -v /var/log/modsecurity:/var/log/modsecurity -d nginx_modsecurity:latest
+    docker run -p 9000:9000 -v /var/www/html/:/var/www/html/ -d webdevops/php:latest
+    docker pull mysql
+    docker run --name mysql -p 3306:3306 -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql
 ```
 
