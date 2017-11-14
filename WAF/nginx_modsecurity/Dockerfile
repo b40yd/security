@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER baoqing<baoqing@byzoro.com>
+MAINTAINER 7ym0n.q6e<7ym0n.q6e@gmail.com>
 
 RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
 echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list && \
@@ -48,6 +48,8 @@ ADD modsecurity.conf /opt/nginx/conf/
 ADD nginx.conf /opt/nginx/conf/
 #RUN mkdir -pv /opt/nginx/conf/vhost 
 #ADD default.conf /opt/nginx/conf/vhost/
+RUN mv /opt/nginx/conf/modsecurity.conf /opt/nginx/conf/modsecurity.conf.backup && mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx.conf.backup
+
 WORKDIR /var/www/html
 
 ENTRYPOINT [ "/opt/nginx/sbin/nginx", "-g", "daemon off;" ]
