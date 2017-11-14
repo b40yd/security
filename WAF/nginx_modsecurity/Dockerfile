@@ -6,7 +6,7 @@ echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-fre
 echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
 echo "deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list
 
-RUN set -xe && apt-get update && apt-get install -y libreadline-dev libncurses5-dev libssl-dev perl make build-essential git  libpcre3 libpcre3-dev libtool autoconf apache2-dev libxml2 libxml2-dev libcurl4-openssl-dev gcc g++ flex bison curl doxygen libyajl-dev libgeoip-dev dh-autoreconf libpcre++-dev wget git
+RUN set -xe && apt-get update && apt-get install -y libreadline-dev libncurses5-dev libssl-dev perl make build-essential libpcre3 libpcre3-dev libtool autoconf apache2-dev libxml2 libxml2-dev libcurl4-openssl-dev gcc g++ flex bison curl doxygen libyajl-dev libgeoip-dev dh-autoreconf libpcre++-dev wget git
 
 RUN cd /opt && wget 'http://nginx.org/download/nginx-1.12.2.tar.gz' && git clone https://github.com/SpiderLabs/ModSecurity && cd ModSecurity && git checkout -b v3/master origin/v3/master && sh build.sh && git submodule init && git submodule update && ./configure --prefix=/opt/modsecurity && make -j8 && make install && echo "/opt/modsecurity/lib/" >> /etc/ld.so.conf.d/libc.conf && ln -s /opt/modsecurity /usr/local/modsecurity
 
