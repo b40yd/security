@@ -165,7 +165,7 @@ include /opt/owasp-modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.
 #   -v, --ver 指定版本信息
 #如: ./init.docker.sh -o debian -v jessie
 ./init.docker.sh -o debian -v jessie
-cat > date "+%Y%m%d" << EOS
+cat > `date "+%Y%m%d"`/Dockerfile << EOS
 RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
 echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list && \
 echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
