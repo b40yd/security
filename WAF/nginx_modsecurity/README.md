@@ -149,8 +149,36 @@ include /opt/owasp-modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.
 动态加载配置文件和应用程序目录（以PHP程序为例）；
 ```shell
     docker run -p 80:80 -v $(pwd)/modsecurity.conf:/opt/nginx/conf/modsecurity.conf -v $(pwd)/nginx.conf:/opt/nginx/conf/nginx.conf -v /var/log/modsecurity:/var/log/modsecurity -d nginx_modsecurity:latest
-    docker run -p 9000:9000 -v /var/www/html/:/var/www/html/ -d webdevops/php:latest
+    #PHP7
+    #docker run -p 9000:9000 -v /var/www/html/:/var/www/html/ -d webdevops/php:latest
+    #PHP5
+    docker run -p 9000:9000 -v /var/www/html:/var/www/html -d php:5.6 
     docker pull mysql
     docker run --name mysql -p 3306:3306 -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql
 ```
 
+#### 自定义其他docker容器
+使用`init.docker.sh`生成`Dockerfile`:
+```shell
+#使用说明
+#   -o, --os 指定操作系统或者应用名字
+#   -v, --ver 指定版本信息
+#如: ./init.docker.sh -o debian -v jessie
+./init.docker.sh -o debian -v jessie
+cat > date "+%Y%m%d" << EOS
+RUN echo "deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
+echo "deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list && \
+echo "deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
+echo "deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib" >> /etc/apt/sources.list
+
+RUN apt-get update
+RUN apt-get install -y php5 php5-mysql php5-fpm
+RUN sed -i 's/daemonize = yes/daemonize = no/g' /etc/php5/fpm/php-fpm.conf
+RUN sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = [::]:9000/g' /etc/php5/fpm/pool.d/www.conf
+RUN sed -i 's/\;php_flag\[display_errors\] = off/php_flag\[display_errors\] = on/g' /etc/php5/fpm/pool.d/www.conf
+
+ENTRYPOINT [ "/usr/sbin/php5-fpm" ]
+expose 9000
+
+EOS
+```
