@@ -71,8 +71,11 @@ if [ -f $M -a -f $F ];then
     rm -rfv $M $F
 fi
 
-find_origin $1 $2 $3 $4
+ORIGIN_RULESET=$(find $3 -type f -name "*.$4"|xargs grep -v "^#"| wc -l)
+NEW_RULESET=$(find $1 -type f -name "*.$2"|xargs grep -v "^#"| wc -l)
 
+find_origin $1 $2 $3 $4
+echo -e "Origin ruleset total: $ORIGIN_RULESET\nNew ruleset total: $NEW_RULESET\n"
 echo -e "Repeat rules total: $(cat ${M} | grep -oP "===.+==="| sort -u | sed -e  "s/===//g"|wc -l) \n"
 echo "done"
 exit 0
