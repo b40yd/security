@@ -119,8 +119,10 @@ class Wifi:
         return channel
     
     def get_frequency(self, channel):
-        frequency_str = "{}GHz".format(int(frequency_lst[str(channel)]/1000))
-        return frequency_str
+        frequency = int(frequency_lst[str(channel)]/1000)
+        if frequency == 2:
+            frequency = 2.4
+        return "{}GHz".format(frequency)
         
     def get_aps(self, pkt):
         #
