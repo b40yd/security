@@ -11,6 +11,81 @@ class Wifi:
     aps = []
     aps2 = []
     channel_lst = set()
+    frequency_lst = {
+        "1": 2412,
+        "2": 2417,
+        "3": 2422,
+        "4": 2427,
+        "5": 2432,
+        "6": 2437,
+        "7": 2442,
+        "8": 2447,
+        "9": 2452,
+        "10": 2457,
+        "11": 2462,
+        "12": 2467,
+        "13": 2472,
+        "32": 5160,
+        "34": 5170,
+        "36": 5180,
+        "38": 5190,
+        "40": 5200,
+        "42": 5210,
+        "44": 5220,
+        "46": 5230,
+        "48": 5240,
+        "50": 5250,
+        "52": 5260,
+        "54": 5270,
+        "56": 5280,
+        "58": 5290,
+        "60": 5300,
+        "62": 5310,
+        "64": 5320,
+        "68": 5340,
+        "96": 5480,
+        "100": 5500,
+        "102": 5510,
+        "104": 5520,
+        "106": 5530,
+        "108": 5540,
+        "110": 5550,
+        "112": 5560,
+        "114": 5570,
+        "116": 5580,
+        "118": 5590,
+        "120": 5600,
+        "122": 5610,
+        "124": 5620,
+        "126": 5630,
+        "128": 5640,
+        "132": 5660,
+        "134": 5670,
+        "136": 5680,
+        "138": 5690,
+        "140": 5700,
+        "142": 5710,
+        "144": 5720,
+        "149": 5745,
+        "151": 5755,
+        "153": 5765,
+        "155": 5775,
+        "157": 5785,
+        "159": 5795,
+        "161": 5805,
+        "165": 5825,
+        "169": 5845,
+        "173": 5865,
+        "183": 4915,
+        "184": 4920,
+        "185": 4925,
+        "187": 4935,
+        "188": 4940,
+        "189": 4945,
+        "192": 4960,
+        "196": 4980,
+        "0": 0
+    }
     def __init__(self, iface='prism0'):
         self.iface = iface
         
@@ -42,6 +117,10 @@ class Wifi:
             except:
                 pass
         return channel
+    
+    def get_frequency(self, channel):
+        frequency_str = "{}GHz".format(int(frequency_lst[str(channel)]/1000))
+        return frequency_str
         
     def get_aps(self, pkt):
         #
@@ -83,10 +162,7 @@ class Wifi:
             elif p.ID == 3:
                 channel = ord(p.info)
                 # 信道频率参考 https://blog.csdn.net/achejq/article/details/8958834
-                if channel >= 1 and channel <= 13:
-                    channel_frequency = '2.4GHz'
-                if channel >= 149 and channel <= 165:
-                    channel_frequency = '5GHz'
+                channel_frequency = self.get_frequency(channel)
             elif p.ID == 48:
                 
                 # 将info中的十六进制转换为字符串，使用 5*2-5*2+2 取02 AES Cipher或04 TKIP Cipher表示十六进制的字符，
@@ -155,7 +231,6 @@ class Wifi:
                         self.get_aps(pkt)
                         
                         '''
-                        
                         rssi = self.get_rssi(pkt)
                         channel = self.get_channel(pkt)
                         print("test channel: %s"%channel)
@@ -167,10 +242,7 @@ class Wifi:
                         
                         self.ssid = pkt.addr2
                         '''
-                    if pkt.addr2 in self.aps:
-                        channel = ord(pkt[Dot11Elt:3].info)
-                        self.channel_lst.add("ssid_%s,channel_%s"%(pkt.info,channel))
-                        print("%s"%(self.channel_lst))
+                        
         except Exception as e:
             print(e)
 
