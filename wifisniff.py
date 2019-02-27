@@ -119,7 +119,7 @@ class Wifi:
         return channel
     
     def get_frequency(self, channel):
-        frequency = int(frequency_lst[str(channel)]/1000)
+        frequency = int(self.frequency_lst[str(channel)]/1000)
         if frequency == 2:
             frequency = 2.4
         return "{}GHz".format(frequency)
@@ -163,7 +163,7 @@ class Wifi:
                     pass
             elif p.ID == 3:
                 channel = ord(p.info)
-                # 信道频率参考 https://blog.csdn.net/achejq/article/details/8958834
+                # 信道频率参考 https://en.wikipedia.org/wiki/List_of_WLAN_channels
                 channel_frequency = self.get_frequency(channel)
             elif p.ID == 48:
                 
