@@ -16,84 +16,62 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-from scapy.all import IP, TCP, wrpcap, Raw, RandShort, sr, sr1, send, Ether
 import socket
+import re
+from scapy.all import IP, TCP, wrpcap, Raw, Ether
+
+DOMAIN_REGEX = re.compile(
+    r"^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([a-zA-Z0-9\-]+\.[a-zA-Z]{2,})(?:[\/\w\.-]*)*\/?$"
+)
 
 
 def get_ip():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    """get local ip"""
+    ss = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         # doesn't even have to be reachable
-        s.connect(("10.255.255.255", 1))
-        IP = s.getsockname()[0]
+        ss.connect(("10.255.255.255", 1))
+        local_ip = ss.getsockname()[0]
     except:
-        IP = "127.0.0.1"
+        local_ip = "127.0.0.1"
     finally:
-        s.close()
-    return IP
+        ss.close()
+    return local_ip
 
 
-def gen_pkt(dst, dst_port):
-    http_request_text = None
-    http_response_text = None
-    # Read the HTTP response from a file
-    with open("http-req.txt", "r") as f:
-        http_request_text = f.read()
+def gen_pkt(
+    dst,
+    dst_port,
+    random_port=43454,
+    http_request_text="",
+    http_response_text="",
+    src_mac="18:26:3a:30:3c:e8",
+    dst_mac="02:42:AC:11:00:03",
+):
+    """gen pcap packet"""
+    http_request_bytes = bytes(http_request_text)
+    if not http_request_bytes.endswith("\n"):
+        http_request_bytes = http_request_bytes + b"\n"
 
-    # Read the HTTP response from a file
-    with open("http-resp.txt", "r") as f:
-        http_response_text = f.read()
+    http_response_bytes = bytes(http_response_text)
+    if not http_response_bytes.endswith("\n"):
+        http_response_bytes = http_response_bytes + b"\n"
 
-    random_port = 43454
-
-    # 构造 TCP SYN 数据包
-    # syn_packet = IP(dst=dst) / TCP(sport=random_port, dport=dst_port, flags="S")
-
-    # 发送 TCP SYN 数据包，获取 TCP SYN-ACK 数据包
-    # syn_ack_packet = sr1(syn_packet)
-
-    # 构造TCP ACK数据包
-    # ack_packet = (
-    #     Ether(src="88:16:5a:40:3c:e8", dst="f8:15:98:f4:ff:ce")
-    #     / IP(dst=dst)
-    #     / TCP(
-    #         dport=dst_port,
-    #         sport=random_port,
-    #         flags="A",
-    #         # seq=syn_ack_packet[TCP].ack,
-    #         # ack=syn_ack_packet[TCP].seq + 1,
-    #     )
-    # )
-
-    # 发送TCP ACK数据包
-    # send(ack_packet)
-
-    # 构造 TCP SYN-ACK 数据包
-    # syn_ack_packet = IP(dst=dst) / TCP(
-    #     sport=random_port, dport=dst_port, flags="SA", seq=100, ack=50
-    # )
-
-    # 构造 HTTP GET 请求数据包
     http_request = (
-        Ether(src="88:16:5a:50:3c:e8", dst="f8:15:98:f4:ff:ce")
+        Ether(src=src_mac, dst=dst_mac)
         / IP(dst=dst)
         / TCP(
             dport=dst_port,
             sport=random_port,
-            # sport=syn_ack_packet[TCP].dport,
-            # seq=syn_ack_packet[TCP].ack,
-            # ack=syn_ack_packet[TCP].seq + 1,
             flags="A",
         )
-        / Raw(bytes(http_request_text.replace("\n", "\r\n"), "utf-8") + b"\r\n")
+        / Raw(http_request_bytes)
     )
 
     http_request.show()
 
-    # send(http_request)
-
-    http_response = (
-        Ether(dst="88:16:5a:40:3c:e8", src="f8:15:98:f4:ff:ce")
+    (http_response,) = (
+        Ether(dst=src_mac, src=dst_mac)
         / IP(
             src=dst,
             dst=get_ip(),
@@ -105,76 +83,63 @@ def gen_pkt(dst, dst_port):
             ack=http_request[TCP].seq + len(http_request[Raw]),
             flags="PA",
         )
-        / http_response_text,
+        / Raw(http_response_bytes)
     )
+    http_response.show()
+    return http_request, http_response
 
-    # send(http_response)
 
-    # 构造TCP FIN数据包
-    # fin_packet = (
-    #     Ether(src="88:16:5a:40:3c:e8", dst="f8:15:98:f4:ff:ce")
-    #     / IP(dst=dst)
-    #     / TCP(
-    #         dport=dst_port,
-    #         sport=random_port,
-    #         seq=http_request[TCP].ack,
-    #         ack=http_request[TCP].seq + len(http_request[TCP].payload),
-    #         flags="FA",
-    #     )
-    #     / Raw(b"FIN")
-    # )
+def get_mac_address():
+    """get interface mac address"""
+    import uuid
 
-    # 发送TCP FIN数据包，获取TCP ACK数据包
-    # fin_ack_packet = sr1(fin_packet)
-
-    # 构造TCP ACK数据包
-    # ack_packet_2 = (
-    #     Ether(src="88:16:5a:40:3c:e8", dst="f8:15:98:f4:ff:ce")
-    #     / IP(dst=dst)
-    #     / TCP(
-    #         dport=dst_port,
-    #         sport=random_port,
-    #         seq=fin_packet[TCP].ack,
-    #         ack=fin_packet[TCP].seq + 1,
-    #         flags="A",
-    #     )
-    # )
-
-    # 发送TCP ACK数据包
-    # send(ack_packet_2)
-    return (
-        # syn_packet,
-        # syn_ack_packet,
-        # ack_packet,
-        http_request,
-        http_response,
-        # fin_packet,
-        # ack_packet_2,
+    mac_address = uuid.getnode()
+    return ":".join(
+        ["{:02x}".format((mac_address >> ele) & 0xFF) for ele in range(0, 8 * 6, 8)][
+            ::-1
+        ]
     )
 
 
-if __name__ == "__main__":
+def get_host_and_port(request=""):
+    """get host and port"""
+    import httpretty
 
-    (
-        # syn_packet,
-        # syn_ack_packet,
-        # ack_packet,
-        http_request,
-        http_response,
-        # fin_packet,
-        # ack_packet_2,
-    ) = gen_pkt("www.a.com", 4081)
+    host = ""
+    port = 80
+    req = httpretty.core.HTTPrettyRequest(request)
+    print(req.headers["host"])
+    host_str = req.headers.get("host", "")
 
-    # Write the request and response packets to a PCAP file
-    wrpcap(
-        "http.pcap",
-        [
-            # syn_packet,
-            # syn_ack_packet,
-            # ack_packet,
-            http_request,
-            http_response,
-            # fin_packet,
-            # ack_packet_2,
-        ],
-    )
+    if ":" in host_str:
+        tmp = host_str.replace("http://", "").replace("https://", "").split(":")
+
+    if len(tmp) >= 2:
+        host = tmp[0]
+        port = int(tmp[1])
+
+    if re.search(DOMAIN_REGEX, host):
+        host = get_ip()
+
+    return host, port
+
+
+def gen_all_packet(multi_http_packet=[]):
+    import random
+
+    result = []
+    for pkt in multi_http_packet:
+        req, resp = pkt
+        host, port = get_host_and_port(req)
+
+        http_pkt = gen_pkt(
+            host,
+            port,
+            random.randint(23456, 65500),
+            req,
+            resp,
+            src_mac=get_mac_address(),
+        )
+        result.append(http_pkt)
+
+    return result
