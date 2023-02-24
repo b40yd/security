@@ -16,8 +16,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-import socket
+import random
 import re
+import socket
+import uuid
+import httpretty
+
 from scapy.all import IP, TCP, wrpcap, Raw, Ether
 
 DOMAIN_REGEX = re.compile(
@@ -27,15 +31,15 @@ DOMAIN_REGEX = re.compile(
 
 def get_ip():
     """get local ip"""
-    ss = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    ssc = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         # doesn't even have to be reachable
-        ss.connect(("10.255.255.255", 1))
-        local_ip = ss.getsockname()[0]
+        ssc.connect(("10.255.255.255", 1))
+        local_ip = ssc.getsockname()[0]
     except:
         local_ip = "127.0.0.1"
     finally:
-        ss.close()
+        ssc.close()
     return local_ip
 
 
@@ -68,7 +72,7 @@ def gen_pkt(
         / Raw(http_request_bytes)
     )
 
-    http_request.show()
+    # http_request.show()
 
     (http_response,) = (
         Ether(dst=src_mac, src=dst_mac)
@@ -85,14 +89,12 @@ def gen_pkt(
         )
         / Raw(http_response_bytes)
     )
-    http_response.show()
+    # http_response.show()
     return http_request, http_response
 
 
 def get_mac_address():
     """get interface mac address"""
-    import uuid
-
     mac_address = uuid.getnode()
     return ":".join(
         ["{:02x}".format((mac_address >> ele) & 0xFF) for ele in range(0, 8 * 6, 8)][
@@ -103,20 +105,19 @@ def get_mac_address():
 
 def get_host_and_port(request=""):
     """get host and port"""
-    import httpretty
 
     host = ""
     port = 80
     req = httpretty.core.HTTPrettyRequest(request)
-    print(req.headers["host"])
     host_str = req.headers.get("host", "")
 
     if ":" in host_str:
         tmp = host_str.replace("http://", "").replace("https://", "").split(":")
-
-    if len(tmp) >= 2:
-        host = tmp[0]
-        port = int(tmp[1])
+        if len(tmp) >= 2:
+            host = tmp[0]
+            port = int(tmp[1])
+    else:
+        host = host_str
 
     if re.search(DOMAIN_REGEX, host):
         host = get_ip()
@@ -124,12 +125,10 @@ def get_host_and_port(request=""):
     return host, port
 
 
-def gen_all_packet(multi_http_packet=[]):
-    import random
-
+def gen_all_packet(multi_http_packet):
+    """gen all http text to http packet"""
     result = []
-    for pkt in multi_http_packet:
-        req, resp = pkt
+    for req, resp in multi_http_packet:
         host, port = get_host_and_port(req)
 
         http_pkt = gen_pkt(
@@ -143,4 +142,3 @@ def gen_all_packet(multi_http_packet=[]):
         result.append(http_pkt)
 
     return result
-
